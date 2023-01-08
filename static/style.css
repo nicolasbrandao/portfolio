@@ -1,6 +1,8 @@
 :root {
-    --background: #282a36;
-    --current-line: #44475a;
+    --background: #0A2647;
+    --current-line: #144272;
+    --current-line2: #205295;
+    --current-line3: #2C74B3;
     --foreground: #f8f8f2;
     --comment: #6272a4;
     --cyan: #8be9fd;
@@ -13,12 +15,137 @@
 
     --code-font: "Cascadia Mono-SemiLight",Menlo,Monaco,Consolas,monospace;
     --body-font: "Segoe UI Web (West European)","Segoe UI",BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: var(--body-font);
-    scroll-behavior: smooth;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: var(--background);
+    color: var(--foreground);
+}
+
+nav {
+    background-color: var(--current-line);
+    height: 2.5rem;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+}
+
+a {
+    display: block;
+}
+
+/* REGULAR MENU STYLE */
+.nav-menu-container {
+    margin-right: 1.5rem;
+}
+
+.nav-menu-container ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav-menu-container ul li {
+    display: inline-block;
+    padding: 0.5rem 0.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.nav-menu-container ul li a {
+    text-decoration: none;
+    color: var(--foreground);
+    transition: all 0.5s;
+    text-transform: uppercase;
+}
+
+.nav-menu-container ul li:hover{
+    background-color: var(--background);
+}
+
+.nav-menu-container ul li a:hover{
+    color: var(--green);
+}
+
+
+/* MOBILE MENU ICON */
+.nav-menu-icon {
+    height: 1.5rem;
+    cursor: pointer;
+    margin-right: 1.5rem;
+}
+
+.menu-icon-container {
+    display: none;
+}
+
+
+/* MOBILE MENU */
+.nav-mobile-menu-container {
+    background-color: var(--current-line);
+    width: 100%;
+    padding: 0;
+    margin-left: -0.5rem;
+    position: fixed;
+    top: 2.5rem;
+    display: none;
+    flex-direction: column;
+    list-style: none;
+}
+
+.nav-mobile-menu-container li {
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+
+.nav-mobile-menu-container li:hover {
+    background-color: var(--current-line3);
+    color: var(--green);
+}
+
+.nav-mobile-menu-container li a {
+    text-decoration: none;
+    color: var(--foreground);
+    text-transform: uppercase;
+    transition: all 0.5s;
+}
+
+.nav-mobile-menu-container li a:hover {
+    color: var(--green);
+}
+
+/* RESPONSIVE MENU MEDIA QUERY */
+@media only screen and (max-width: 755px) {
+    .nav-menu-container {
+        display: none;
+    }
+
+    .nav-mobile-menu-container {
+        display: flex;
+    }
+
+    .menu-icon-container {
+        display: flex;
+        gap: 1rem;
+    }
+
+}
+
+
+/* MAIN */
+.main-block {
+    border: 1px solid var(--foreground);
+    height: 100vh;
+    padding-top: 3.5rem;
 }
