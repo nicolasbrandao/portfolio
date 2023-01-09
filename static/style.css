@@ -46,11 +46,14 @@ a {
 /* REGULAR MENU STYLE */
 .nav-menu-container {
     margin-right: 1.5rem;
+    display: flex;
+    align-items: center;
 }
 
 .nav-menu-container ul {
     list-style: none;
     display: flex;
+    margin-left: -3rem;
 }
 
 .nav-menu-container ul li {
@@ -61,6 +64,10 @@ a {
     transition: all 0.5s;
 }
 
+.nav-menu-container ul li:hover{
+    background-color: var(--background);
+}
+
 .nav-menu-container ul li a {
     text-decoration: none;
     color: var(--foreground);
@@ -68,14 +75,15 @@ a {
     text-transform: uppercase;
 }
 
-.nav-menu-container ul li:hover{
-    background-color: var(--background);
-}
-
 .nav-menu-container ul li a:hover{
     color: var(--green);
 }
 
+.nav-right-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
 
 /* MOBILE MENU ICON */
 .nav-menu-icon {
@@ -102,12 +110,21 @@ a {
     list-style: none;
 }
 
+.mobile-menu-img-container {
+    width: 3rem;
+    height: 1.5rem;
+}
+
+.mode-icon {
+    height: 1.5rem;
+}
+
 .nav-mobile-menu-container li {
     padding: 0.5rem;
     cursor: pointer;
     transition: all 0.5s;
+    overflow: hidden;
 }
-
 
 .nav-mobile-menu-container li:hover {
     background-color: var(--current-line3);
@@ -119,6 +136,7 @@ a {
     color: var(--foreground);
     text-transform: uppercase;
     transition: all 0.5s;
+    display: block;
 }
 
 .nav-mobile-menu-container li a:hover {
@@ -129,10 +147,6 @@ a {
 @media only screen and (max-width: 755px) {
     .nav-menu-container {
         display: none;
-    }
-
-    .nav-mobile-menu-container {
-        display: flex;
     }
 
     .menu-icon-container {

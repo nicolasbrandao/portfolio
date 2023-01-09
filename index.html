@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQuery CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    
     <!-- CSS stylesheet -->
     <link rel="stylesheet" href="./static/style.css">
 
@@ -19,30 +20,36 @@
         <nav>
 
             <label class="nav-brand">NícolasBrandão</label>
-            
-            <div class="menu-icon-container">
-                <div>Dark-mode M</div>
-                <img class="nav-menu-icon" src="./static/assets/icons/menu-icon.svg" alt="Mobile menu icon">
+            <div class="nav-right-container">
+                <div>
+                    <img class="mode-icon" id="mode-icon" src="./static/assets/icons/dark-mode.svg" alt="Mode icon">
+                </div>
+    
+                <div class="menu-icon-container">
+                    <div class="mobile-menu-img-container">
+                        <img class="nav-menu-icon" id="nav-menu-icon" src="./static/assets/icons/menu-icon.svg" alt="Mobile menu icon">
+                    </div>    
+                </div>
+                
+                <div class="nav-menu-container">
+                    <ul>
+                        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre mim</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#curriculo">Currículo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                        
+                    </ul>
+                </div>
             </div>
-
-            <div class="nav-menu-container">
-                <ul>
-                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre mim</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#curriculo">Currículo</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
-                    <li>Dark-mode</li>
-                </ul>
-            </div>
-
-            <ul class="nav-mobile-menu-container">
+            <ul class="nav-mobile-menu-container" id="nav-mobile-menu-container">
                 <li class="nav-item"><a class="nav-link" href="#sobre">Sobre mim</a></li>
                 <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                 <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
                 <li class="nav-item"><a class="nav-link" href="#curriculo">Currículo</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
             </ul>
+
 
         </nav>
     </header>
