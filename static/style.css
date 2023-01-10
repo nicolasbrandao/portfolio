@@ -46,7 +46,7 @@ a {
 
 /* REGULAR MENU STYLE */
 .nav-menu-container {
-    margin-right: 1.5rem;
+    margin-left: -0.5rem;
     display: flex;
     align-items: center;
     width: 28rem;
@@ -94,6 +94,7 @@ a {
 }
 
 .menu-icon-container {
+    margin-right: 1.5rem;
     display: none;
 }
 
