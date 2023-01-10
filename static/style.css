@@ -1,8 +1,9 @@
 :root {
     --background: #0A2647;
-    --current-line: #144272;
-    --current-line2: #205295;
-    --current-line3: #2C74B3;
+    --background1: #161616;
+    --background2: #144272;
+    --background3: #205295;
+    --background4: #2C74B3;
     --foreground: #f8f8f2;
     --comment: #6272a4;
     --cyan: #8be9fd;
@@ -24,12 +25,12 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: var(--background);
+    background-color: var(--background1);
     color: var(--foreground);
 }
 
 nav {
-    background-color: var(--current-line);
+    background-color: var(--background);
     height: 2.5rem;
     padding: 0.5rem;
     display: flex;
@@ -48,12 +49,15 @@ a {
     margin-right: 1.5rem;
     display: flex;
     align-items: center;
+    width: 28rem;
+    overflow: hidden;
+    transition: all 0.2s;
 }
 
 .nav-menu-container ul {
     list-style: none;
+    padding: 0;
     display: flex;
-    margin-left: -3rem;
 }
 
 .nav-menu-container ul li {
@@ -62,10 +66,11 @@ a {
     border-radius: 2rem;
     cursor: pointer;
     transition: all 0.5s;
+    white-space: nowrap;
 }
 
 .nav-menu-container ul li:hover{
-    background-color: var(--background);
+    background-color: var(--background2);
 }
 
 .nav-menu-container ul li a {
@@ -73,10 +78,6 @@ a {
     color: var(--foreground);
     transition: all 0.5s;
     text-transform: uppercase;
-}
-
-.nav-menu-container ul li a:hover{
-    color: var(--green);
 }
 
 .nav-right-container {
@@ -99,7 +100,7 @@ a {
 
 /* MOBILE MENU */
 .nav-mobile-menu-container {
-    background-color: var(--current-line);
+    background-color: var(--background);
     width: 100%;
     padding: 0;
     margin-left: -0.5rem;
@@ -120,33 +121,30 @@ a {
 }
 
 .nav-mobile-menu-container li {
-    padding: 0.5rem;
     cursor: pointer;
     transition: all 0.5s;
     overflow: hidden;
 }
 
 .nav-mobile-menu-container li:hover {
-    background-color: var(--current-line3);
-    color: var(--green);
+    background-color: var(--background2);
 }
 
 .nav-mobile-menu-container li a {
     text-decoration: none;
     color: var(--foreground);
+    padding: 0.5rem;
     text-transform: uppercase;
     transition: all 0.5s;
     display: block;
 }
 
-.nav-mobile-menu-container li a:hover {
-    color: var(--green);
-}
-
 /* RESPONSIVE MENU MEDIA QUERY */
 @media only screen and (max-width: 755px) {
     .nav-menu-container {
-        display: none;
+        width: 0rem;
+        visibility: hidden;
+        margin-left: -3rem;
     }
 
     .menu-icon-container {
