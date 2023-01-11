@@ -7,7 +7,7 @@ function toggleMenuIcon () {
     let closeURL = './static/assets/icons/close-menu-icon.svg';
     let openURL ='./static/assets/icons/menu-icon.svg';
 
-    if (($('.nav-mobile-menu-container').is(":visible"))) {
+    if (($('.nav-mobile-menu-container').is(':visible'))) {
         $('#nav-menu-icon').fadeOut(100, function(){
             $(this).attr('src', closeURL).bind('onreadystatechange load', function(){
                if (this.complete) $(this).fadeIn(100);
@@ -23,21 +23,9 @@ function toggleMenuIcon () {
 };
 
 function toggleMobileMenu() {
-    
     $('.nav-mobile-menu-container').slideToggle(300);
     setTimeout(toggleMenuIcon,350);
-    
 };
-
-$(window).resize(function() {
-    if(window.innerWidth > 756) {
-        
-        if ($('.nav-mobile-menu-container').is(":visible")){
-            $('.nav-mobile-menu-container').slideUp();
-        }
-        toggleMenuIcon();
-    };
-});
 
 function toggleMode() {
     let lightURL = './static/assets/icons/light-mode.svg';
@@ -59,3 +47,33 @@ function toggleMode() {
         darkMode = true;
     };
 };
+
+// Slide mobile menu up if window is resized
+$(window).resize(function() {
+    if(window.innerWidth > 756) {
+        
+        if ($('.nav-mobile-menu-container').is(":visible")){
+            $('.nav-mobile-menu-container').slideUp();
+        }
+        toggleMenuIcon();
+    };
+});
+
+// Slide navbar up if window scroll-down
+var lastScrollTop = 0;
+$(window).scroll(function(event){
+    var scrollTop = $(this).scrollTop();
+    if (scrollTop > lastScrollTop){
+        $('#navbar').slideUp();
+        if ($('.nav-mobile-menu-container').is(":visible")){
+            $('.nav-mobile-menu-container').slideUp();
+            setTimeout(toggleMenuIcon,300);
+        }
+    } else {
+        $('#navbar').slideDown();
+    }
+    lastScrollTop = scrollTop;
+ });
+
+// Slide mobile menu when anchor is clicked
+
