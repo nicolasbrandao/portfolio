@@ -131,6 +131,7 @@ a {
 
 /* MOBILE MENU */
 .nav-mobile-menu-container {
+    display: none;
     position: fixed;
     top: 2.5rem;
     left: 0;
