@@ -55,7 +55,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    width: 100vw;
+    width: 100%;
     box-shadow: 0 3px 8px 8px var(--dark-shadow);
 }
 
