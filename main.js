@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#mode-icon').addEventListener('click', () => toggleMode())
 })
 
+// Toggle Menu Icon based on mobile menu visibility
 function toggleMenuIcon () {
     let closeURL = './static/assets/icons/close-menu-icon.svg';
     let openURL ='./static/assets/icons/menu-icon.svg';
@@ -22,11 +23,13 @@ function toggleMenuIcon () {
     };
 };
 
+// Toggle mobile menu visibility
 function toggleMobileMenu() {
     $('.nav-mobile-menu-container').slideToggle(300);
     setTimeout(toggleMenuIcon,350);
 };
 
+// Toggle theme
 function toggleMode() {
     let lightURL = './static/assets/icons/light-mode.svg';
     let darkURL ='./static/assets/icons/dark-mode.svg';
@@ -74,6 +77,4 @@ $(window).scroll(function(event){
     }
     lastScrollTop = scrollTop;
  });
-
-// Slide mobile menu when anchor is clicked
 
