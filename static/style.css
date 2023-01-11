@@ -21,6 +21,12 @@
     scroll-behavior: smooth;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 ::-webkit-scrollbar {
     width:6px;
 }
@@ -35,9 +41,6 @@
 
 body {
     font-family: var(--body-font);
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     background-color: var(--background1);
     color: var(--foreground);
     overflow: overlay;
@@ -52,12 +55,16 @@ nav {
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    width: 100%;
+    width: 100vw;
     box-shadow: 0 3px 8px 8px var(--dark-shadow);
 }
 
 a {
     display: block;
+}
+
+.high-text {
+    color: var(--cyan);
 }
 
 /* REGULAR MENU STYLE */
@@ -76,9 +83,14 @@ a {
     display: flex;
 }
 
+.nav-menu-container ul li:last-child{
+    border: 1px solid var(--green);
+    border-radius: 0.4rem;
+}
+
 .nav-menu-container ul li {
     display: block;
-    padding: 0.5rem 0.5rem;
+    padding: 0.2rem 0.5rem;
     transition: all 0.5s;
     white-space: nowrap;
 }
@@ -112,31 +124,33 @@ a {
 }
 
 .menu-icon-container {
-    margin-right: 1.5rem;
+    margin-right: 0.5rem;
     display: none;
     cursor: pointer;
 }
 
 /* MOBILE MENU */
 .nav-mobile-menu-container {
-    background-color: var(--background1);
-    width: 100%;
-    padding: 0;
-    margin-left: -0.5rem;
     position: fixed;
     top: 2.5rem;
-    display: none;
-    flex-direction: column;
-    list-style: none;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(3px);
 }
 
 .mobile-menu-img-container {
-    width: 3rem;
     height: 1.5rem;
 }
 
 .mode-icon {
     height: 1.5rem;
+}
+
+.nav-mobile-menu-container ul {
+    list-style: none;
+    margin-top: 0;
 }
 
 .nav-mobile-menu-container li {
@@ -179,6 +193,8 @@ a {
     max-width: 50rem;
     min-width: 22rem;
     padding-top: 3.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     margin: 0 auto;
 }
 
@@ -191,7 +207,8 @@ a {
 
 #full-name {
     font-weight: bolder;
-    font-size: 5rem;
+    font-size: 4.5rem;
+
 }
 
 #full-name::before{
@@ -214,8 +231,10 @@ a {
 #intro {
     font-size: 3rem;
     font-weight: bolder;
+    color: lightgray;
+
 }
 
 #bio {
-
+    padding: 2rem 0rem;
 }
