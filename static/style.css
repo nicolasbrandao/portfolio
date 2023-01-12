@@ -6,6 +6,7 @@
     --background4: #2C74B3;
     --dark-shadow: #101010;
     --foreground: #f8f8f2;
+    --foreground2: lightgray;
     --comment: #6272a4;
     --cyan: #8be9fd;
     --green: #50fa7b;
@@ -55,7 +56,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    width: 100%;
+    width: 100vw;
     box-shadow: 0 3px 8px 8px var(--dark-shadow);
 }
 
@@ -109,7 +110,15 @@ a {
 
 .nav-menu-container ul li:last-child{
     border: 1px solid var(--green);
-    border-radius: 0.4rem;
+    border-radius: 0.2rem;
+}
+
+.nav-menu-container ul li:last-child:hover{
+    background-color: rgba(80, 250, 123, 0.1)
+}
+
+.nav-menu-container ul li:last-child a{
+    color: var(--green);
 }
 
 .nav-menu-container ul li {
@@ -155,6 +164,7 @@ a {
 /* MOBILE MENU */
 .nav-mobile-menu-container {
     display: none;
+    margin-top: 0.5rem;
     height: 100vh;
     width: 100vw;
     background-color: rgba(0, 0, 0, 0);
@@ -171,7 +181,6 @@ a {
 
 .nav-mobile-menu-container ul {
     list-style: none;
-    margin-top: 0;
 }
 
 .nav-mobile-menu-container li {
@@ -223,7 +232,34 @@ a {
     margin: 0 auto;
 }
 
-/* ABOUT */
+.section-title {
+    color: var(--cyan);
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.section-title::before {
+    content: '<';
+    color: var(--foreground);
+    font-size: 2rem;
+    font-family: var(--code-font);
+}
+
+.section-title::after {
+    content: '/>';
+    color: var(--foreground);
+    font-size: 2rem;
+    font-family: var(--code-font);
+    border-bottom: 1px solid white;
+}
+
+/* HOME */
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 #greeting {
     color: var(--cyan);
     font-family: var(--code-font);
@@ -256,7 +292,7 @@ a {
 #intro {
     font-size: 3rem;
     font-weight: bolder;
-    color: lightgray;
+    color: var(--foreground2);
 
 }
 
