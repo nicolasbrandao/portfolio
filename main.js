@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#mode-icon').addEventListener('click', () => toggleMode())
 })
 
-// Toggle Menu Icon based on mobile menu visibility
+// Toggle menu icon based on mobile menu visibility
 function toggleMenuIcon () {
     let closeURL = './static/assets/icons/close-menu-icon.svg';
     let openURL ='./static/assets/icons/menu-icon.svg';
@@ -62,18 +62,18 @@ $(window).resize(function() {
     };
 });
 
-// Slide navbar up if window scroll-down
+// Slide navbar up if window scrolls-down
 var lastScrollTop = 0;
 $(window).scroll(function(event){
     var scrollTop = $(this).scrollTop();
     if (scrollTop > lastScrollTop){
-        $('#navbar').slideUp();
+        $('.navbar').slideUp();
         if ($('.nav-mobile-menu-container').is(":visible")){
             $('.nav-mobile-menu-container').slideUp();
             setTimeout(toggleMenuIcon,300);
         }
     } else {
-        $('#navbar').slideDown();
+        $('.navbar').slideDown();
     }
     lastScrollTop = scrollTop;
  });

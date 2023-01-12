@@ -71,14 +71,32 @@ a {
 .nav-regular-menu-container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0 0.5rem;
     width: 100vw;
 }
+
+.nav-brand {
+    font-family: var(--code-font);
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+.nav-brand::before {
+    content: '<';
+    color: var(--green);
+}
+
+.nav-brand::after {
+    content: '/>';
+    color: var(--green);
+}
+
 .nav-menu-container {
     margin-left: -0.5rem;
     display: flex;
     align-items: center;
-    width: 24rem;
+    width: 27.5rem;
     overflow: hidden;
     transition: all 0.2s;
 }
@@ -100,7 +118,6 @@ a {
     transition: all 0.5s;
     white-space: nowrap;
 }
-
 
 .nav-menu-container ul li a {
     text-decoration: none;
@@ -165,6 +182,7 @@ a {
 
 .nav-mobile-menu-container li:hover {
     background-color: var(--green);
+    color: var(--background1);
 }
 
 .nav-mobile-menu-container li a {
@@ -173,6 +191,10 @@ a {
     padding: 0.5rem;
     transition: all 0.5s;
     display: block;
+}
+
+.nav-mobile-menu-container li a:hover {
+    color: var(--background1);
 }
 
 /* RESPONSIVE MENU MEDIA QUERY */
