@@ -60,6 +60,10 @@ nav {
     box-shadow: 0 3px 8px 8px var(--dark-shadow);
 }
 
+main {
+    font-size: 1.2rem;
+}
+
 a {
     display: block;
 }
@@ -221,15 +225,21 @@ a {
 }
 
 /* MAIN */
-
 .main-block {
     height: 100vh;
     max-width: 50rem;
     min-width: 22rem;
-    padding-top: 3.5rem;
+    padding-top: 3rem;
     padding-left: 1rem;
     padding-right: 1rem;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
 }
 
 .section-title {
@@ -250,7 +260,22 @@ a {
     color: var(--foreground);
     font-size: 2rem;
     font-family: var(--code-font);
-    border-bottom: 1px solid white;
+}
+
+.title-br {
+    width: 50%;
+    height: 0;
+    margin-top: 2px;
+    margin-left: 3rem;
+    border-bottom: 1px solid var(--green);
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    height: calc(100% - 5rem);
 }
 
 /* HOME */
@@ -298,4 +323,40 @@ a {
 
 #bio {
     padding: 2rem 0rem;
+}
+
+/* ABOUT */
+.profile-img {
+    width: 18rem;
+    transition: all 0.5s;
+    border-radius: 0.2rem;
+}
+
+/* SKILLS */
+.technologies-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 100%;
+    margin: 3rem auto;
+}
+
+.technology-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.technology-card p {
+    font-family: var(--code-font);
+    color: var(--green);
+}
+
+.technology-icon{
+    width: 5rem;
+    transition: all 0.5s;
+}
+
+.technology-icon:hover {
+    transform: translate(0, -20px)
 }
