@@ -150,6 +150,12 @@ a {
 
 .mode-icon {
     cursor: pointer;
+    filter: invert(91%) sepia(3%) saturate(588%) hue-rotate(1deg) brightness(112%) contrast(95%);
+    transition: all 0.5s;
+}
+
+.mode-icon:hover {
+    filter: invert(87%) sepia(41%) saturate(788%) hue-rotate(64deg) brightness(107%) contrast(96%);
 }
 
 /* MOBILE MENU ICON */
@@ -345,6 +351,11 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: all 0.5s;
+}
+
+.technology-card:hover {
+    transform: translate(0, -20px);
 }
 
 .technology-card p {
@@ -354,9 +365,60 @@ a {
 
 .technology-icon{
     width: 5rem;
-    transition: all 0.5s;
 }
 
-.technology-icon:hover {
-    transform: translate(0, -20px)
+/* LATERAL MENU */
+.lateral-menu {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.lateral-menu ul {
+    list-style: none;
+}
+
+.right {
+    bottom: 0;
+    right: 1.5rem;
+}
+
+.left {
+    margin-left: 1rem;
+} 
+
+.lateral-menu-icon {
+    width: 2rem;
+    filter: invert(87%) sepia(0%) saturate(1597%) hue-rotate(142deg) brightness(108%) contrast(74%);
+    transition: all 1s;
+    cursor: pointer;
+}
+
+.lateral-menu-icon:hover {
+    transform: translate(0px, -10px);
+    filter: invert(66%) sepia(42%) saturate(586%) hue-rotate(83deg) brightness(109%) contrast(106%);
+}
+
+.lateral-menu-email {
+    font-family: var(--code-font);
+    font-size: 0.8rem;
+    color: var(--foreground2);
+    writing-mode: vertical-lr;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.lateral-menu-email:hover {
+    transform: translate(0px, -10px);
+    color: var(--green);
+}
+
+.lateral-menu-br {
+    height: 14rem;
+    width: 1px;
+    border-left: 1px solid var(--green);
+}
+
