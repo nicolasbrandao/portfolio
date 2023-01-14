@@ -56,8 +56,10 @@ nav {
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    width: 100vw;
+    width: 100%;
+    min-width: 26.5;
     box-shadow: 0 3px 8px 8px var(--dark-shadow);
+    border: 1px solid red;
 }
 
 main {
@@ -66,6 +68,7 @@ main {
 
 a {
     display: block;
+    text-decoration: none;
 }
 
 .high-text {
@@ -79,6 +82,7 @@ a {
     align-items: center;
     padding: 0 0.5rem;
     width: 100vw;
+    border: 1px solid red;
 }
 
 .nav-brand {
@@ -215,8 +219,7 @@ a {
 .nav-mobile-menu-container li a:hover {
     color: var(--background1);
 }
-
-/* RESPONSIVE MENU MEDIA QUERY */
+/* RESPONSIVE NAVBAR MEDIA QUERY */
 @media only screen and (max-width: 755px) {
     .nav-menu-container {
         width: 0rem;
@@ -234,13 +237,14 @@ a {
 .main-block {
     height: 100vh;
     max-width: 50rem;
-    min-width: 22rem;
+    min-width: 26.5rem;
     padding-top: 3rem;
     padding-left: 1rem;
     padding-right: 1rem;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    border: 1px solid red;
 }
 
 .title-container {
@@ -331,6 +335,11 @@ a {
     padding: 2rem 0rem;
 }
 
+/* REPONSIVE HOME MEDIA QUERY*/
+@media only screen and (max-width: 920px) {
+
+}
+
 /* ABOUT */
 .profile-img {
     width: 18rem;
@@ -371,9 +380,13 @@ a {
 .lateral-menu {
     position: fixed;
     bottom: 0;
+    height: 30rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+    transition: all 0.3s;
 }
 
 .lateral-menu ul {
@@ -420,5 +433,13 @@ a {
     height: 14rem;
     width: 1px;
     border-left: 1px solid var(--green);
+}
+
+/* RESPONSIVE LATEREAL MENU MEDIA QUERY */
+@media only screen and (max-width: 755px) {
+    .lateral-menu{
+        height: 0;
+        visibility: hidden;
+    }
 }
 

@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Toggle menu icon based on mobile menu visibility
 function toggleMenuIcon () {
-    let closeURL = './static/assets/icons/close-menu-icon.svg';
-    let openURL ='./static/assets/icons/menu-icon.svg';
+    let closeURL = './static/assets/icons/mobile-menu/close-menu-icon.svg';
+    let openURL ='./static/assets/icons/mobile-menu/menu-icon.svg';
 
     if (($('.nav-mobile-menu-container').is(':visible'))) {
         $('#nav-menu-icon').fadeOut(100, function(){
@@ -31,8 +31,8 @@ function toggleMobileMenu() {
 
 // Toggle theme
 function toggleMode() {
-    let lightURL = './static/assets/icons/light-mode.svg';
-    let darkURL ='./static/assets/icons/dark-mode.svg';
+    let lightURL = './static/assets/icons/theme/light-mode.svg';
+    let darkURL ='./static/assets/icons/theme/dark-mode.svg';
 
     if ($('#mode-icon').attr('src') === darkURL) {
         $('#mode-icon').fadeOut(200, function(){
