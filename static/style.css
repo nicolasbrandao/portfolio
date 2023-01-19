@@ -25,6 +25,7 @@
 * {
     margin: 0;
     padding: 0;
+    background-color: rgba(0, 0, 0, 0.2) !important;
     box-sizing: border-box;
 }
 
@@ -57,9 +58,7 @@ nav {
     align-items: center;
     position: fixed;
     width: 100%;
-    min-width: 26.5;
     box-shadow: 0 3px 8px 8px var(--dark-shadow);
-    border: 1px solid red;
 }
 
 main {
@@ -81,8 +80,7 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 0 0.5rem;
-    width: 100vw;
-    border: 1px solid red;
+    width: 100%;
 }
 
 .nav-brand {
@@ -179,8 +177,8 @@ a {
 .nav-mobile-menu-container {
     display: none;
     margin-top: 0.5rem;
-    height: 100vh;
-    width: 100vw;
+    height: 100dvh;
+    width: 100dvw;
     background-color: rgba(0, 0, 0, 0);
 }
 
@@ -219,32 +217,17 @@ a {
 .nav-mobile-menu-container li a:hover {
     color: var(--background1);
 }
-/* RESPONSIVE NAVBAR MEDIA QUERY */
-@media only screen and (max-width: 755px) {
-    .nav-menu-container {
-        width: 0rem;
-        visibility: hidden;
-        margin-left: -3rem;
-    }
-
-    .menu-icon-container {
-        display: flex;
-        gap: 1rem;
-    }
-}
 
 /* MAIN */
 .main-block {
     height: 100vh;
     max-width: 50rem;
-    min-width: 26.5rem;
     padding-top: 3rem;
     padding-left: 1rem;
     padding-right: 1rem;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
 }
 
 .title-container {
@@ -333,11 +316,6 @@ a {
 
 #bio {
     padding: 2rem 0rem;
-}
-
-/* REPONSIVE HOME MEDIA QUERY*/
-@media only screen and (max-width: 920px) {
-
 }
 
 /* ABOUT */
@@ -435,11 +413,46 @@ a {
     border-left: 1px solid var(--green);
 }
 
-/* RESPONSIVE LATEREAL MENU MEDIA QUERY */
+@media only screen and (max-width: 920px) and (min-width: 756px) {
+    .main-block {
+        max-width: calc(100% - 7.5rem);
+    }
+}
+
 @media only screen and (max-width: 755px) {
+    .nav-menu-container {
+        width: 0rem;
+        visibility: hidden;
+        margin-left: -3rem;
+    }
+
+    .menu-icon-container {
+        display: flex;
+        gap: 1rem;
+    }
+
+    #full-name {
+        font-size: 15dvw;
+    }
+
+    #full-name::before {
+        font-size: 17dvw;
+    }
+
+    #full-name::after {
+        font-size: 17dvw;
+    }
+
+    #intro {
+        font-size: 10dvw;
+    }
+
     .lateral-menu{
         height: 0;
         visibility: hidden;
     }
-}
 
+    .main-block {
+        max-width: 100dvw;
+    }
+}
