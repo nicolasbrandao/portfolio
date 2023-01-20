@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#nav-menu-icon').addEventListener('click', () => toggleMobileMenu())
     document.querySelector('#mode-icon').addEventListener('click', () => toggleMode())
+
+    getGithubStats();
 })
 
 // Toggle menu icon based on mobile menu visibility
@@ -88,3 +90,14 @@ function removeLoader(){
         $('.loader-wrapper').remove();
     });   
 };
+
+function getGithubStats () {
+    const url = 'https://api.github.com/repos/nicolasbrandao/portfolio';
+
+    fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+            document.getElementById('github-stars').innerHTML = data.stargazers_count;
+            document.getElementById('github-forks').innerHTML = data.forks;
+        })
+}

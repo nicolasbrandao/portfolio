@@ -16,9 +16,9 @@
     <title>Nícolas Brandão - Front-end Dev</title>
 </head>
 <body>
-    <div class="loader-wrapper">
+    <!-- <div class="loader-wrapper">
         <div class="loader"><img src="./static/assets/icons/logo/logo.svg" alt="Logo"></div>
-     </div>
+    </div> -->
 
     <header>
         <nav class="navbar">
@@ -66,10 +66,12 @@
 
     <main>
         <div id="home" class="main-block">
-            <p id="greeting">Olá, meu nome é</p>
-            <h1 id="full-name">Nícolas Brandão</h1>
-            <p id="intro">Sou um desenvolvedor front-end.</p>
-            <p id="bio">Lorem ipsum dolor sit, amet <span class="high-text">consectetur</span> adipisicing elit. Numquam soluta reiciendis nam laboriosam expedita ut, at nesciunt, <span class="high-text">consequatur</span>, modi autem deserunt? Quis aperiam quia delectus eius aliquam blanditiis ducimus quos.</p>
+            <div class="main-container">
+                <p id="greeting">Olá, meu nome é</p>
+                <h1 id="full-name">Nícolas Brandão</h1>
+                <p id="intro">Sou um desenvolvedor front-end.</p>
+                <p id="bio">Lorem ipsum dolor sit, amet <span class="high-text">consectetur</span> adipisicing elit. Numquam soluta reiciendis nam laboriosam expedita ut, at nesciunt, <span class="high-text">consequatur</span>, modi autem deserunt? Quis aperiam quia delectus eius aliquam blanditiis ducimus quos.</p>
+            </div>
         </div>
         
         <div id="sobre" class="main-block">
@@ -78,13 +80,15 @@
                 <div class="title-br"></div>
             </div>
             <div class="main-container">
-                <div class="about-text">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, est architecto atque, ex qui, ipsa commodi laborum aut dolores inventore quas eveniet suscipit nisi hic minima animi accusantium necessitatibus quibusdam!
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    </p>
-                </div>
-                <div class="about-img">
-                    <img class="profile-img" src="./static/assets/images/profile-square.png" alt="Nícolas Brandão">
+                <div class="about-container">
+                    <div class="about-text">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, est architecto atque, ex qui, ipsa commodi laborum aut dolores inventore quas eveniet suscipit nisi hic minima animi accusantium necessitatibus quibusdam!
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        </p>
+                    </div>
+                    <div class="about-img">
+                        <img class="profile-img" src="./static/assets/images/profile-square.png" alt="Nícolas Brandão">
+                    </div>
                 </div>
             </div>  
         </div>
@@ -108,6 +112,14 @@
                     <div class="technology-card">
                         <img class="technology-icon" src="./static/assets/icons/technologies/styled-components.svg" alt="Styled-Components">
                         <p>Styled-components</p>
+                    </div>
+                    <div class="technology-card">
+                        <img class="technology-icon" src="./static/assets/icons/technologies/tailwind.svg" alt="Tailwind">
+                        <p>Tailwind</p>
+                    </div>
+                    <div class="technology-card">
+                        <img class="technology-icon" src="./static/assets/icons/technologies/bootstrap.svg" alt="Bootstraps">
+                        <p>Bootstrap</p>
                     </div>
                     <div class="technology-card">
                         <img class="technology-icon" src="./static/assets/icons/technologies/javascript.svg" alt="JavaScript">
@@ -155,10 +167,13 @@
         <div class="lateral-menu left">
             <ul>
                 <li>
+                    <a href="https://www.linkedin.com/in/nicolasbrandao/" target="_blank" rel="author"><img class="lateral-menu-icon" src="./static/assets/icons/social-media/linkedin.svg" alt="Linkedin"></a>
+                </li>
+                <li>
                     <a href="https://github.com/nicolasbrandao" target="_blank" rel="author"><img class="lateral-menu-icon" src="./static/assets/icons/social-media/github.svg" alt="Github"></a>
                 </li>
                 <li>
-                    <a href="https://www.linkedin.com/in/nicolasbrandao/" target="_blank" rel="author"><img class="lateral-menu-icon" src="./static/assets/icons/social-media/linkedin.svg" alt="Linkedin"></a>
+                    <a href="https://frill-word-deb.notion.site/05e98f1767054c43a2cea6118e331bcb?v=a47a1074574940c7a0a7091ccdd706de" target="_blank" rel="author"><img class="lateral-menu-icon" src="./static/assets/icons/social-media/notion.svg" alt="Notion roadmap"></a>
                 </li>
             </ul>
             <div class="lateral-menu-br"></div>
@@ -170,7 +185,19 @@
     </main>
 
     <footer>
-        Footer
+        <a class="repo-hyperlink" href="https://github.com/nicolasbrandao/portfolio" target="_blank">
+            <p>Projetado & Desenvolvido por Nícolas Brandão</p>
+            <div class="github-stats-row">
+                <div class="github-stats-container">
+                    <img class="github-stats-img" src="./static/assets/icons/github-stats/github-star.svg" alt="Github stars">
+                    <span id="github-stars"></span>
+                </div>
+                <div class="github-stats-container">
+                    <img class="github-stats-img" src="./static/assets/icons/github-stats/github-fork.svg" alt="Github forks">
+                    <span id="github-forks"></span>
+                </div>
+            </div>
+        </a>
     </footer>
 
 </body>
