@@ -78,3 +78,13 @@ $(window).scroll(function(event){
     lastScrollTop = scrollTop;
  });
 
+ // Pre-loader
+$(window).on('load', function(){
+    setTimeout(removeLoader, 5000);
+});
+
+function removeLoader(){
+    $('.loader-wrapper').fadeOut(500, function() {
+        $('.loader-wrapper').remove();
+    });   
+};
