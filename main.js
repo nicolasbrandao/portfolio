@@ -80,9 +80,12 @@ $(window).scroll(function(event){
     lastScrollTop = scrollTop;
  });
 
- // Pre-loader
+ // Pre-loader animation
+const preloaderTime = 2500;
 $(window).on('load', function(){
-    setTimeout(removeLoader, 5000);
+    $('body').css('overflow', 'hidden');
+    setTimeout(removeLoader, preloaderTime);
+    setTimeout(() => $('body').css('overflow', 'overlay'), preloaderTime);
 });
 
 function removeLoader(){
@@ -91,6 +94,7 @@ function removeLoader(){
     });   
 };
 
+// Fetch github repository stats for footer
 function getGithubStats () {
     const url = 'https://api.github.com/repos/nicolasbrandao/portfolio';
 

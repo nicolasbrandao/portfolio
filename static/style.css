@@ -37,7 +37,6 @@ body {
     font-family: var(--body-font);
     background-color: var(--background1);
     color: var(--foreground);
-    overflow: overlay;
 }
 
 nav {
@@ -104,10 +103,21 @@ a:visited {
     overflow: hidden;
 }
 
-.loader {
-    font-size: 3rem;
-    font-weight: bolder;
-    overflow: hidden;
+.loader-text {
+    stroke: var(--green);
+    font-size: 8rem;
+    font-weight: 700;
+    stroke-width: 2;
+    animation: animateText 2s ease-in-out;
+}
+
+@keyframes animateText {
+    0%{
+        stroke-dasharray: 0 50%;
+    }
+    100%{
+        stroke-dasharray: 50% 0;
+    }
 }
 
 /* REGULAR MENU STYLE */
