@@ -1,5 +1,6 @@
 :root {
     --background1: #161616;
+    --background2: #252525;
     --dark-shadow: #101010;
     --foreground: #f8f8f2;
     --foreground2: lightgray;
@@ -42,6 +43,7 @@ body {
 nav {
     background-color: rgba(0, 0, 0, 0);
     backdrop-filter: blur(6px);
+    z-index: 10;
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -49,6 +51,7 @@ nav {
     align-items: center;
     position: fixed;
     width: 100%;
+    transition: box-shadow 0.3s;
     box-shadow: 0 3px 8px 8px var(--dark-shadow);
 }
 
@@ -65,6 +68,10 @@ a:link {
 a:visited {
     text-decoration: none;
     color: inherit;
+}
+
+p {
+    text-align: justify;
 }
 
 .high-text {
@@ -86,6 +93,32 @@ a:visited {
 
 .high-text:hover::before {
     width: 100%;
+}
+
+/* HIDE AND SHOW ELEMENTS ON SCROLL WITH INTERSECTION OBERSERVER */
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translate(0, 100px);
+    transition: none;
+}
+
+.shown {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(0, 0);
+}
+
+@media(prefers-reduced-motion: no-preference) {
+    .hidden {
+        transition: all 1s;
+    }
+
+    .hidden-home-nav {
+        transition: transform 1s;
+        transition: filter 1s;
+        transition: opacity 1s;
+    }
 }
 
 /* PRE-LOADER */
@@ -133,6 +166,7 @@ a:visited {
     font-weight: bolder;
     font-size: 1.2rem;
     cursor: pointer;
+    transition: all 0.5s;
 }
 
 .nav-brand::before {
@@ -203,7 +237,7 @@ a:visited {
 .mode-icon {
     cursor: pointer;
     filter: invert(91%) sepia(3%) saturate(588%) hue-rotate(1deg) brightness(112%) contrast(95%);
-    transition: all 0.5s;
+    transition: filter 0.5s;
 }
 
 .mode-icon:hover {
@@ -215,6 +249,12 @@ a:visited {
     height: 1.5rem;
     cursor: pointer;
     margin-right: 1.5rem;
+    filter: invert(91%) sepia(3%) saturate(588%) hue-rotate(1deg) brightness(112%) contrast(95%);
+    transition: all 0.3s;
+}
+
+.nav-menu-icon:hover {
+    filter: invert(87%) sepia(41%) saturate(788%) hue-rotate(64deg) brightness(107%) contrast(96%);
 }
 
 .menu-icon-container {
@@ -451,8 +491,8 @@ a:visited {
 }
 
 .profile-img:hover {
-    box-shadow:  19px 19px 38px #46dc6c,
-                -19px -19px 38px #5aff8a;
+    box-shadow:  10px 10px 28px #46dc6c,
+                -10px -10px 28px #5aff8a;
 }
 
 /* SKILLS */
@@ -483,6 +523,91 @@ a:visited {
 
 .technology-icon{
     width: 5rem;
+}
+
+.technology-title {
+    word-break: break-all;
+}
+
+/* PROJECTS */
+.project-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 6rem;
+    
+}
+
+.project-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    right: 150px;
+    gap: 1rem;
+    width: 15rem;
+    height: 21rem;
+    padding: 1rem;
+    border-radius: 0.2rem;
+    box-shadow: 5px 5px 5px var(--dark-shadow);
+    background-color: var(--background2);
+    transition: all 0.5s;
+}
+
+.project-card:hover {
+    transform: translate(0, -10px);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.project-folder {
+    width: 2rem;
+    filter: invert(87%) sepia(0%) saturate(1597%) hue-rotate(142deg) brightness(108%) contrast(74%);
+}
+
+.project-external {
+    width: 1.5rem;
+    filter: invert(87%) sepia(0%) saturate(1597%) hue-rotate(142deg) brightness(108%) contrast(74%);
+}
+
+.project-title {
+    font-weight: bolder;
+}
+
+.project-footer {
+    font-family: var(--code-font);
+    font-size: 0.8rem;
+    color: var(--foreground2);
+}
+
+/* CONTACT */
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-card:hover {
+    transform: translate(0, -10px);
+}   
+
+.contact-icon {
+    width: 2rem;
+    filter: invert(91%) sepia(3%) saturate(588%) hue-rotate(1deg) brightness(112%) contrast(95%);
+    transition: all 1s;
+}
+
+.contact-icon:hover {
+    filter: invert(87%) sepia(41%) saturate(788%) hue-rotate(64deg) brightness(107%) contrast(96%);
 }
 
 /* FOOTER */
@@ -552,7 +677,7 @@ footer {
     }
 
     #greeting {
-        font-size: 3dvw;
+        font-size: 4dvw;
     }
 
     #full-name {
@@ -576,6 +701,25 @@ footer {
     }
 
     .technology-card {
-        flex: 1 0 25%;
+        flex: 1 0 30%;
+    }
+
+    .projects-section {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .project-container {
+        margin-bottom: 0;
+    }
+
+    .project-img {
+        display: none;
+    }
+
+    .project-card {
+        position: static;
     }
 }

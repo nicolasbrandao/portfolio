@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./static/assets/icons/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./static/assets/icons/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./static/assets/icons/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./static/assets/icons/favicon/site.webmanifest">
+
     <!-- jQuery CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
@@ -13,16 +19,16 @@
     <!-- JavaScript file -->
     <script src="./main.js"></script>
 
-    <title>Nícolas Brandão - Front-end Dev</title>
+    <title>Nícolas Brandão - Desenvolvedor Front-end</title>
 </head>
 <body>
-    <div class="loader-wrapper">
+    <!-- <div class="loader-wrapper">
         <svg viewBox="0 0 1350 600">
             <text class="loader-text" x="50%" y="50%" fill="transparent" text-anchor="middle">
                 &lt;NB/&gt;
             </text>
         </svg>
-    </div>
+    </div> -->
 
     <header>
         <nav class="navbar">
@@ -73,24 +79,28 @@
             <div class="main-container">
                 <p id="greeting">Olá, meu nome é</p>
                 <h1 id="full-name">Nícolas Brandão</h1>
-                <p id="intro">Sou um desenvolvedor front-end.</p>
-                <p id="bio">Lorem ipsum dolor sit, amet <span class="high-text">consectetur</span> adipisicing elit. Numquam soluta reiciendis nam laboriosam expedita ut, at nesciunt, <span class="high-text">consequatur</span>, modi autem deserunt? Quis aperiam quia delectus eius aliquam blanditiis ducimus quos.</p>
+                <p id="intro">Sou um desenvolvedor front-end</p>
+                <p id="bio">Sou um <span class="high-text">profissional</span> que busca diariamente melhorar a habilidade em construir para a web. Meu objetivo atual é desenvolver minhas habilidades com <span class="high-text">React.js</span> e me tornar uma referência nessa tecnologia</p>
             </div>
         </div>
         
         <div id="sobre" class="main-block">
-            <div class="title-container">
+            <div class="title-container hidden">
                 <h2 class="section-title">Sobre mim</h2>
                 <div class="title-br"></div>
             </div>
             <div class="main-container">
                 <div class="about-container">
                     <div class="about-text">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, est architecto atque, ex qui, ipsa commodi laborum aut dolores inventore quas eveniet suscipit nisi hic minima animi accusantium necessitatibus quibusdam!
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        </p>
+                        <p class="hidden">Sou um profissional em transição de carreira para <span class="high-text">desenvolvimento front-end</span>. Todo o planejamento e estudo está sendo feito de forma autônoma - <span class="high-text">aprender sozinho</span> é um dos meus <span class="high-text">pontos fortes</span> mas também gosto de fazer parte de <span class="high-text">projetos em equipe</span></p>
+                        <br>
+                        <p class="hidden">Acredito na <span class="high-text">organização</span>, <span class="high-text">planejamento</span> e <span class="high-text">análise sistemática</span> dos processos como <span class="high-text">pilares</span> do trabalho bem-feito, seja qual for a área</p>
+                        <br>
+                        <p class="hidden">Minha <span class="high-text">experiência</span> anterior é em <span class="high-text">gestão de projetos</span> - especialmente na indústria automotiva. Estudei <span class="high-text">engenharia mecânica</span> na UFMG e me formei <span class="high-text">técnico em informática</span> no Cefet-MG. Também tive experiência de um ano no <span class="high-text">exterior</span> como intercambista na Hungria - <span class="high-text">Budapest University of Technology and Economics</span></p>
+                        <br> 
+                        <p class="hidden">Estou <span class="high-text">muito feliz</span> na caminhada de <span class="high-text">transição</span> para o mundo do <span class="high-text">desenvolvimento front-end</span>. Curtir o processo é essencial para alcançarmos nossos objetivos com plenitude</p>
                     </div>
-                    <div class="about-img">
+                    <div class="about-img hidden">
                         <img class="profile-img" src="./static/assets/images/profile-square.png" alt="Nícolas Brandão">
                     </div>
                 </div>
@@ -98,73 +108,152 @@
         </div>
 
         <div id="skills" class="main-block">
-            <div class="title-container">
+            <div class="title-container hidden">
                 <h2 class="section-title">Skills</h2>
                 <div class="title-br"></div>
             </div>
             <div class="main-container">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aspernatur veritatis eaque, delectus consequuntur aliquid odio incidunt repellendus aut ducimus dolores pariatur sunt dolorem cupiditate similique ut, quam cum deleniti?</p>
+                <p class="hidden">Estas são as <span class="high-text">principais</span> tecnologias com que tenho trabalhado. Atualmente, meu foco principal é <span class="high-text">React</span> com <span class="high-text">Redux</span> e <span class="high-text">TypeScript</span></p>
                 <div class="technologies-container">
-                    <div class="technology-card">
+                    <div class="technology-card hidden">
                         <img class="technology-icon" src="./static/assets/icons/technologies/react.svg" alt="React">
-                        <p>React</p>
+                        <p class="technology-title">React</p>
                     </div>
-                    <div class="technology-card">
+                    <div class="technology-card hidden">
                         <img class="technology-icon" src="./static/assets/icons/technologies/redux.svg" alt="Redux">
-                        <p>Redux</p>
+                        <p class="technology-title">Redux</p>
                     </div>
-                    <div class="technology-card">
+                    <div class="technology-card hidden">
                         <img class="technology-icon" src="./static/assets/icons/technologies/styled-components.svg" alt="Styled-Components">
-                        <p>Styled-components</p>
+                        <p class="technology-title">Styled-components</p>
                     </div>
-                    <div class="technology-card">
+                    <div class="technology-card hidden">
                         <img class="technology-icon" src="./static/assets/icons/technologies/tailwind.svg" alt="Tailwind">
-                        <p>Tailwind</p>
+                        <p class="technology-title">Tailwind</p>
                     </div>
-                    <div class="technology-card">
+                    <div class="technology-card hidden">
                         <img class="technology-icon" src="./static/assets/icons/technologies/bootstrap.svg" alt="Bootstraps">
-                        <p>Bootstrap</p>
+                        <p class="technology-title">Bootstrap</p>
                     </div>
-                    <div class="technology-card">
+                    <div class="technology-card hidden">
                         <img class="technology-icon" src="./static/assets/icons/technologies/javascript.svg" alt="JavaScript">
-                        <p>JavaScript</p>
+                        <p class="technology-title">JavaScript</p>
                     </div>
-                    <div class="technology-card">
+                    <div class="technology-card hidden">
                         <img class="technology-icon" src="./static/assets/icons/technologies/typescript.svg" alt="TypeScript">
-                        <p>TypeScript</p>
+                        <p class="technology-title">TypeScript</p>
                     </div>
-                    <div class="technology-card">
+                    <div class="technology-card hidden">
                         <img class="technology-icon" src="./static/assets/icons/technologies/html5.svg" alt="HTML">
-                        <p>HTML</p>
+                        <p class="technology-title">HTML</p>
                     </div>
-                    <div class="technology-card">
+                    <div class="technology-card hidden">
                         <img class="technology-icon" src="./static/assets/icons/technologies/css3.svg" alt="CSS">
-                        <p>CSS</p>
+                        <p class="technology-title">CSS</p>
                     </div>
-                    <div class="technology-card">
+                    <div class="technology-card hidden">
+                        <img class="technology-icon" src="./static/assets/icons/technologies/git.svg" alt="Git">
+                        <p class="technology-title">Git</p>
+                    </div>
+                    <div class="technology-card hidden">
                         <img class="technology-icon" src="./static/assets/icons/technologies/python.svg" alt="Python">
-                        <p>Python</p>
+                        <p class="technology-title">Python</p>
                     </div>
-                    <div class="technology-card">
+                    <div class="technology-card hidden">
                         <img class="technology-icon" src="./static/assets/icons/technologies/django.svg" alt="Django">
-                        <p>Django</p>
+                        <p class="technology-title">Django</p>
                     </div>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aspernatur veritatis eaque, delectus consequuntur aliquid odio incidunt repellendus aut ducimus dolores pariatur sunt dolorem cupiditate similique ut, quam cum deleniti?</p>
+                <p class="hidden">Por enquanto, meu objetivo é consolidar o conhecimento nessas tecnologias. Mas também pretendo conhecer novos frameworks como <span class="high-text">Angular</span>, <span class="high-text">Svelte</span> e <span class="high-text">Next.js</span></p>
             </div>
         </div>
 
         <div id="projetos" class="main-block">
-            <div class="title-container">
+            <div class="title-container hidden">
                 <h2 class="section-title">Projetos</h2>
                 <div class="title-br"></div>
+            </div>
+            <div class="main-container">
+                <div class="projects-section">
+                    <div class="project-container hidden">
+                        <img src="https://picsum.photos/600/300" alt="LOREMIMG" class="project-img">
+                        <div class="project-card">
+                            <div class="project-body">
+                                <div class="project-header">
+                                    <img src="./static/assets/icons/misc/folder.svg" alt="Folder" class="project-folder">
+                                    <div>
+                                        <img src="./static/assets/icons/social-media/github.svg" alt="Repo link" class="project-external">
+                                        <img src="./static/assets/icons/misc/external-link.svg" alt="Demo link" class="project-external">
+                                    </div>
+                                </div>
+                                <div class="project-title">Título de Projeto Teste</div>
+                                <div class="project-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis molestias esse impedit asperiores cumque.</div>
+                            </div>
+                            <div class="project-footer">React Redux Styled-components</div>
+                        </div>
+                    </div>
+
+                    <div class="project-container hidden">
+                        <img src="https://picsum.photos/600/300" alt="LOREMIMG" class="project-img">
+                        <div class="project-card">
+                            <div class="project-body">
+                                <div class="project-header">
+                                    <img src="./static/assets/icons/misc/folder.svg" alt="Folder" class="project-folder">
+                                    <div>
+                                        <img src="./static/assets/icons/social-media/github.svg" alt="Repo link" class="project-external">
+                                        <img src="./static/assets/icons/misc/external-link.svg" alt="Demo link" class="project-external">
+                                    </div>
+                                </div>
+                                <div class="project-title">Título de Projeto Teste</div>
+                                <div class="project-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis molestias esse impedit asperiores cumque.</div>
+                            </div>
+                            <div class="project-footer">React Redux Styled-components</div>
+                        </div>
+                    </div>
+
+                    <div class="project-container hidden">
+                        <img src="https://picsum.photos/600/300" alt="LOREMIMG" class="project-img">
+                        <div class="project-card">
+                            <div class="project-body">
+                                <div class="project-header">
+                                    <img src="./static/assets/icons/misc/folder.svg" alt="Folder" class="project-folder">
+                                    <div>
+                                        <img src="./static/assets/icons/social-media/github.svg" alt="Repo link" class="project-external">
+                                        <img src="./static/assets/icons/misc/external-link.svg" alt="Demo link" class="project-external">
+                                    </div>
+                                </div>
+                                <div class="project-title">Título de Projeto Teste</div>
+                                <div class="project-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis molestias esse impedit asperiores cumque.</div>
+                            </div>
+                            <div class="project-footer">React Redux Styled-components</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div id="contato" class="main-block">
-            <div class="title-container">
+            <div class="title-container hidden">
                 <h2 class="section-title">Contato</h2>
                 <div class="title-br"></div>
+            </div>
+            <div class="main-container">
+                <div class="contact-card hidden">
+                    <img class="contact-icon" src="./static/assets/icons/misc/mail.svg" alt="Email">
+                    <p class="contact-title">nicolas.brandaor@gmail.com</p>
+                </div>
+                <div class="contact-card hidden">
+                    <img class="contact-icon" src="./static/assets/icons/misc/whatsapp.svg" alt="Whatsapp">
+                    <p class="contact-title">+55 37 9 9112 4140</p>
+                </div>
+                <div class="contact-card hidden">
+                    <img class="contact-icon" src="./static/assets/icons/social-media/linkedin.svg" alt="LinkedIn">
+                    <p class="contact-title">linkedin.com/in/nicolasbrandao/</p>
+                </div>
+                <div class="contact-card hidden">
+                    <img class="contact-icon" src="./static/assets/icons/social-media/github.svg" alt="Github">
+                    <p class="contact-title">github.com/nicolasbrandao</p>
+                </div>
             </div>
         </div>
 
@@ -189,7 +278,7 @@
     </main>
 
     <footer>
-        <a class="repo-hyperlink" href="https://github.com/nicolasbrandao/portfolio" target="_blank">
+        <a class="repo-hyperlink hidden" href="https://github.com/nicolasbrandao/portfolio" target="_blank">
             <p>Projetado & Desenvolvido por Nícolas Brandão</p>
             <div class="github-stats-row">
                 <div class="github-stats-container">
