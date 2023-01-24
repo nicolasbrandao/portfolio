@@ -2,10 +2,30 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#nav-menu-icon').addEventListener('click', () => toggleMobileMenu())
     document.querySelector('#mode-icon').addEventListener('click', () => toggleTheme())
 
-    // Home opening animation
-    homeOpeningAnimation();
+    // Set initial theme to 'dark'
+    document.documentElement.className = 'dark';
+
+    // Slide navbar on scroll
+    slideNavbarUp();
+
+    // Pre-loader animation
+    preLoaderAnimation();
+
+    // Remove navbar shadow if scrollTop === 0
+    removeNavbarShadow();
 
     // Animate on scroll
+    showElementsOnScroll();
+
+    // Slide mobile menu up if window is resized
+    slideOnResize();
+
+    // Fetch github repository stats
+    getGithubStats();
+})
+
+// Show elements on scroll
+function showElementsOnScroll () {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -16,58 +36,53 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const hiddenElements = document.querySelectorAll('.hidden');
     hiddenElements.forEach((el) => observer.observe(el));
+};
 
-    // Remove navbar box-shadow if scrollTop === 0
-    if ($(window).scrollTop() === 0){
-        $('nav').css('box-shadow', 'none');
-    }
-
-    // Fetch github repository stats
-    getGithubStats();
-})
+// Remove navbar box-shadow if scrollTop === 0
+function removeNavbarShadow () {
+    $(window).scroll(function(event) {
+        if ($(this).scrollTop() === 0){
+            $('nav').css('box-shadow', 'none');
+        } else {
+            $('nav').css('box-shadow', '0 3px 8px 8px var(--dark-shadow)');
+        }
+    })
+};
 
 // Pre-loader animation
-const preloaderTime = 2500;
-$(window).on('load', function(){
-    $('body').css('overflow', 'hidden');
-    setTimeout(removeLoader, preloaderTime);
-    setTimeout(() => $('body').css('overflow', 'overlay'), preloaderTime);
-});
+function preLoaderAnimation () {
+    const preloaderTime = 2000;
+    $(window).on('load', function(){
+        $('body').css('overflow', 'hidden');
+        setTimeout(removeLoader, preloaderTime);
+        setTimeout(() => $('body').css('overflow', 'overlay'), preloaderTime);
+    });
+};
 
+// Remove pre-loader
 function removeLoader(){
     $('.loader-wrapper').fadeOut(500, function() {
         $('.loader-wrapper').remove();
     });   
 };
 
-// Home opening animation
-function homeOpeningAnimation () {
-}
-
 // Slide navbar up if window scrolls-down
-var lastScrollTop = 0;
-$(window).scroll(function(event){
-    var scrollTop = $(this).scrollTop();
-    if (scrollTop > lastScrollTop){
-        $('.navbar').slideUp();
-        if ($('.nav-mobile-menu-container').is(":visible")){
-            $('.nav-mobile-menu-container').slideUp();
-            setTimeout(toggleMenuIcon,300);
+function slideNavbarUp () {
+    var lastScrollTop = 0;
+    $(window).scroll(function(event){
+        var scrollTop = $(this).scrollTop();
+        if (scrollTop > lastScrollTop){
+            $('.navbar').slideUp();
+            if ($('.nav-mobile-menu-container').is(":visible")){
+                $('.nav-mobile-menu-container').slideUp();
+                setTimeout(toggleMenuIcon,300);
+            }
+        } else {
+            $('.navbar').slideDown();
         }
-    } else {
-        $('.navbar').slideDown();
-    }
-    lastScrollTop = scrollTop;
- });
-
-// Remove navbar box-shadow if scrollTop === 0
-$(window).scroll(function(event) {
-    if ($(this).scrollTop() === 0){
-        $('nav').css('box-shadow', 'none');
-    } else {
-        $('nav').css('box-shadow', '0 3px 8px 8px var(--dark-shadow)');
-    }
-})
+        lastScrollTop = scrollTop;
+    });
+};
 
 // Toggle menu icon based on mobile menu visibility
 function toggleMenuIcon () {
@@ -117,19 +132,29 @@ function toggleThemeIcon() {
 
 // Toggle Theme
 function toggleTheme() {
+    let currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+
+    if (currentTheme === 'dark') {
+        document.documentElement.className = 'light';
+    } else {
+        document.documentElement.className = 'dark';
+    }
+
     toggleThemeIcon();
 };
 
 // Slide mobile menu up if window is resized
-$(window).resize(function() {
-    if(window.innerWidth > 756) {
-        
-        if ($('.nav-mobile-menu-container').is(":visible")){
-            $('.nav-mobile-menu-container').slideUp();
-        }
-        toggleMenuIcon();
-    };
-});
+function slideOnResize() {
+    $(window).resize(function() {
+        if(window.innerWidth > 756) {
+            
+            if ($('.nav-mobile-menu-container').is(":visible")){
+                $('.nav-mobile-menu-container').slideUp();
+            }
+            toggleMenuIcon();
+        };
+    });
+};
 
 // Fetch github repository stats for footer
 function getGithubStats () {

@@ -49,8 +49,8 @@
                     
                     <div class="nav-menu-container">
                         <ul>
-                            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="#sobre">Sobre mim</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                             <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
                             <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
@@ -78,10 +78,10 @@
     <main>
         <div id="home" class="main-block">
             <div class="main-container">
-                <p id="greeting">Olá, meu nome é</p>
-                <h1 id="full-name">Nícolas Brandão</h1>
-                <p id="intro">Sou um desenvolvedor front-end</p>
-                <p id="bio">Sou um <span class="high-text">profissional</span> que busca diariamente melhorar a habilidade em construir para a web. Meu objetivo atual é desenvolver minhas habilidades com <span class="high-text">React.js</span> e me tornar uma referência nessa tecnologia</p>
+                <p id="greeting" class="hidden">Olá, meu nome é</p>
+                <h1 id="full-name" class="hidden">Nícolas Brandão</h1>
+                <p id="intro" class="hidden">Sou um desenvolvedor front-end</p>
+                <p id="bio" class="hidden">Sou um <span class="high-text">profissional</span> que busca diariamente melhorar a habilidade em construir para a web. Meu objetivo atual é desenvolver minhas habilidades com <span class="high-text">React.js</span> e me tornar uma referência nessa tecnologia</p>
             </div>
         </div>
         
@@ -100,6 +100,8 @@
                         <p class="hidden">Minha <span class="high-text">experiência</span> anterior é em <span class="high-text">gestão de projetos</span> - especialmente na indústria automotiva. Estudei <span class="high-text">engenharia mecânica</span> na UFMG e me formei <span class="high-text">técnico em informática</span> no Cefet-MG. Também tive experiência de um ano no <span class="high-text">exterior</span> como intercambista na Hungria - <span class="high-text">Budapest University of Technology and Economics</span></p>
                         <br> 
                         <p class="hidden">Estou <span class="high-text">muito feliz</span> na caminhada de <span class="high-text">transição</span> para o mundo do <span class="high-text">desenvolvimento front-end</span>. Curtir o processo é essencial para alcançarmos nossos objetivos com plenitude</p>
+                        <br>
+                        <a href="https://frill-word-deb.notion.site/05e98f1767054c43a2cea6118e331bcb?v=a47a1074574940c7a0a7091ccdd706de" class="button-link hidden" target="_blank">Acesse meu Notion<img src="./static/assets/icons/misc/external-link.svg" alt="Notion" class="notion-external"></a>
                     </div>
                     <div class="about-img hidden">
                         <img class="profile-img" src="./static/assets/images/profile-square.png" alt="Nícolas Brandão">
@@ -177,7 +179,7 @@
             <div class="main-container">
                 <div class="projects-section">
                     <div class="project-container hidden">
-                        <img src="https://picsum.photos/600/300" alt="LOREMIMG" class="project-img">
+                        <img src="https://picsum.photos/600/300?a" alt="LOREMIMG" class="project-img">
                         <div class="project-card">
                             <div class="project-body">
                                 <div class="project-header">
@@ -195,7 +197,7 @@
                     </div>
 
                     <div class="project-container hidden">
-                        <img src="https://picsum.photos/600/300" alt="LOREMIMG" class="project-img">
+                        <img src="https://picsum.photos/600/300?b" alt="LOREMIMG" class="project-img">
                         <div class="project-card">
                             <div class="project-body">
                                 <div class="project-header">
@@ -213,7 +215,7 @@
                     </div>
 
                     <div class="project-container hidden">
-                        <img src="https://picsum.photos/600/300" alt="LOREMIMG" class="project-img">
+                        <img src="https://picsum.photos/600/300?c" alt="LOREMIMG" class="project-img">
                         <div class="project-card">
                             <div class="project-body">
                                 <div class="project-header">
@@ -241,20 +243,20 @@
             <div class="main-container">
                 <div class="contact-container hidden">
                     <div class="contact-backdrop">
-                        <p class="contact-name hidden"> <span class="high-text">Nícolas Brandão</span></p>
-                        <div class="contact-card hidden">
+                        <p class="contact-name"> <span class="high-text">Nícolas Brandão</span></p>
+                        <div class="contact-card">
                             <img class="contact-icon" src="./static/assets/icons/misc/mail.svg" alt="Email">
                             <p class="contact-title">nicolas.brandaor@gmail.com</p>
                         </div>
-                        <div class="contact-card hidden">
+                        <div class="contact-card">
                             <img class="contact-icon" src="./static/assets/icons/misc/whatsapp.svg" alt="Whatsapp">
                             <p class="contact-title">+55 37 9 9112 4140</p>
                         </div>
-                        <div class="contact-card hidden">
+                        <div class="contact-card">
                             <img class="contact-icon" src="./static/assets/icons/social-media/linkedin.svg" alt="LinkedIn">
                             <p class="contact-title">linkedin.com/in/nicolasbrandao/</p>
                         </div>
-                        <div class="contact-card hidden">
+                        <div class="contact-card">
                             <img class="contact-icon" src="./static/assets/icons/social-media/github.svg" alt="Github">
                             <p class="contact-title">github.com/nicolasbrandao</p>
                         </div>

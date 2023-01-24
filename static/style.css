@@ -1,12 +1,17 @@
-:root {
+:root,
+    :root.dark {
     --background1: #161616;
     --background2: #252525;
     --dark-shadow: #101010;
     --foreground: #f8f8f2;
     --foreground2: lightgray;
-    --comment: #6272a4;
     --cyan: #8be9fd;
     --green: #50fa7b;
+
+    /* filters */
+    --to-green: invert(84%) sepia(8%) saturate(2819%) hue-rotate(75deg) brightness(91%) contrast(118%);
+    --to-foreground: invert(90%) sepia(9%) saturate(513%) hue-rotate(342deg) brightness(118%) contrast(94%);
+    --to-foreground2: invert(83%) sepia(0%) saturate(113%) hue-rotate(209deg) brightness(110%) contrast(79%);
 
     --code-font: "Cascadia Mono-SemiLight",Menlo,Monaco,Consolas,monospace;
     --body-font: "Segoe UI Web (West European)","Segoe UI",BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
@@ -14,10 +19,21 @@
     scroll-behavior: smooth;
 }
 
-* {
+:root.light {
+    --background1: #f8f8f2;
+    --background2: #D6E4E5;
+    --dark-shadow: #f2f2f2;
+    --foreground: #03001C;
+    --foreground2: #301E67;
+    --cyan: #5B8FB9;
+    --green: #50fa7b;
+}
+
+*, *:before, *:after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* background-color: rgba(0, 0, 0, 0.1) !important; */
 }
 
 ::-webkit-scrollbar {
@@ -49,7 +65,7 @@ nav {
     align-items: center;
     position: fixed;
     width: 100%;
-    transition: box-shadow 0.3s;
+    transition: box-shadow 1s;
     box-shadow: 0 3px 8px 8px var(--dark-shadow);
 }
 
@@ -57,14 +73,15 @@ main {
     font-size: 1.2rem;
 }
 
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
+
 a:link {
     display: block;
-    text-decoration: none;
-    
 }
 
 a:visited {
-    text-decoration: none;
     color: inherit;
 }
 
@@ -93,6 +110,7 @@ p {
     width: 100%;
 }
 
+
 /* HIDE AND SHOW ELEMENTS ON SCROLL WITH INTERSECTION OBERSERVER */
 .hidden {
     opacity: 0;
@@ -110,12 +128,6 @@ p {
 @media(prefers-reduced-motion: no-preference) {
     .hidden {
         transition: all 1s;
-    }
-
-    .hidden-home-nav {
-        transition: transform 1s;
-        transition: filter 1s;
-        transition: opacity 1s;
     }
 }
 
@@ -164,7 +176,7 @@ p {
     font-weight: bolder;
     font-size: 1.2rem;
     cursor: pointer;
-    transition: all 0.5s;
+    transition: all 1s;
 }
 
 .nav-brand::before {
@@ -187,7 +199,7 @@ p {
     align-items: center;
     width: 27.5rem;
     overflow: hidden;
-    transition: all 0.2s;
+    transition: all 1s;
 }
 
 .nav-menu-container ul {
@@ -212,18 +224,18 @@ p {
 .nav-menu-container ul li {
     display: block;
     padding: 0.2rem 0.5rem;
-    transition: all 0.5s;
+    transition: all 1s;
     white-space: nowrap;
 }
 
 .nav-menu-container ul li a {
     text-decoration: none;
     color: var(--foreground);
-    transition: all 0.5s;
+    transition: all 1s;
 }
 .nav-menu-container ul li a:hover {
     color: var(--green);
-    transition: all 0.5s;
+    transition: all 1s;
 }
 
 .nav-right-container {
@@ -234,12 +246,12 @@ p {
 
 .mode-icon {
     cursor: pointer;
-    filter: invert(91%) sepia(3%) saturate(588%) hue-rotate(1deg) brightness(112%) contrast(95%);
-    transition: filter 0.5s;
+    filter: var(--to-foreground2);
+    transition: all 1s;
 }
 
 .mode-icon:hover {
-    filter: invert(87%) sepia(41%) saturate(788%) hue-rotate(64deg) brightness(107%) contrast(96%);
+    filter: var(--to-green);
 }
 
 /* MOBILE MENU ICON */
@@ -247,12 +259,12 @@ p {
     height: 1.5rem;
     cursor: pointer;
     margin-right: 1.5rem;
-    filter: invert(91%) sepia(3%) saturate(588%) hue-rotate(1deg) brightness(112%) contrast(95%);
-    transition: all 0.3s;
+    filter: var(--to-foreground2);
+    transition: all 1s;
 }
 
 .nav-menu-icon:hover {
-    filter: invert(87%) sepia(41%) saturate(788%) hue-rotate(64deg) brightness(107%) contrast(96%);
+    filter: var(--to-green);
 }
 
 .menu-icon-container {
@@ -285,7 +297,7 @@ p {
 
 .nav-mobile-menu-container li {
     cursor: pointer;
-    transition: all 0.5s;
+    transition: all 1s;
     overflow: hidden;
 }
 
@@ -298,7 +310,7 @@ p {
     text-decoration: none;
     color: var(--foreground);
     padding: 0.5rem;
-    transition: all 0.5s;
+    transition: all 1s;
     display: block;
 }
 
@@ -332,7 +344,8 @@ p {
 .section-title {
     color: var(--cyan);
     font-size: 1.5rem;
-    font-weight: bolder;
+    font-weight: 400;
+    font-family: var(--code-font);
 }
 
 .section-title::before {
@@ -376,7 +389,7 @@ p {
     align-items: center;
     justify-content: flex-end;
     overflow: hidden;
-    transition: all 0.3s;
+    transition: all 1s;
 }
 
 .lateral-menu ul {
@@ -395,14 +408,14 @@ p {
 .lateral-menu-icon {
     width: 2rem;
     margin-top: 0.2rem;
-    filter: invert(87%) sepia(0%) saturate(1597%) hue-rotate(142deg) brightness(108%) contrast(74%);
+    filter: var(--to-foreground2);
     transition: all 1s;
     cursor: pointer;
 }
 
 .lateral-menu-icon:hover {
     transform: translate(0px, -10px);
-    filter: invert(66%) sepia(42%) saturate(586%) hue-rotate(83deg) brightness(109%) contrast(106%);
+    filter: var(--to-green);
 }
 
 .lateral-menu-email {
@@ -466,11 +479,12 @@ p {
     font-size: 3rem;
     font-weight: bolder;
     color: var(--foreground2);
-
+    text-align: left;
 }
 
 #bio {
     padding: 2rem 0rem;
+    text-align: left;
 }
 
 /* ABOUT */
@@ -482,11 +496,35 @@ p {
     gap: 1rem;
 }
 
+.button-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width:fit-content;
+    padding: 1rem;
+    margin-top: 3rem;
+    color: var(--green);
+    border: 1px solid var(--green);
+    border-radius: 0.2rem;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.button-link:hover {
+    background-color: rgba(80, 250, 123, 0.1)
+}
+
+.notion-external {
+    filter: var(--to-green);
+    width: 1.5rem;
+}
+
 .profile-img {
     position: relative;
     width: 15rem;
     border-radius: 0.2rem;
-    transition: all 0.5s;
+    transition: all 1s;
 }
 
 .profile-img:hover {
@@ -508,7 +546,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: all 0.5s;
+    transition: all 1s;
 }
 
 .technology-card:hover {
@@ -522,6 +560,7 @@ p {
 
 .technology-icon{
     width: 5rem;
+    filter: var(--to-green);
 }
 
 .technology-title {
@@ -555,7 +594,7 @@ p {
     border-radius: 0.2rem;
     box-shadow: 5px 5px 5px var(--dark-shadow);
     background-color: var(--background2);
-    transition: all 0.5s;
+    transition: all 1s;
 }
 
 .project-card:hover {
@@ -570,12 +609,12 @@ p {
 
 .project-folder {
     width: 2rem;
-    filter: invert(87%) sepia(0%) saturate(1597%) hue-rotate(142deg) brightness(108%) contrast(74%);
+    filter: var(--to-foreground2);
 }
 
 .project-external {
     width: 1.5rem;
-    filter: invert(87%) sepia(0%) saturate(1597%) hue-rotate(142deg) brightness(108%) contrast(74%);
+    filter: var(--to-foreground2);
 }
 
 .project-title {
@@ -619,6 +658,7 @@ p {
     display: flex;
     align-items: center;
     gap: 1rem;
+    transition: all 1s;
 }
 
 .contact-card:hover {
@@ -633,12 +673,12 @@ p {
 
 .contact-icon {
     width: 1.8rem;
-    filter: invert(91%) sepia(3%) saturate(588%) hue-rotate(1deg) brightness(112%) contrast(95%);
+    filter: var(--to-foreground);
     transition: all 1s;
 }
 
 .contact-icon:hover {
-    filter: invert(87%) sepia(41%) saturate(788%) hue-rotate(64deg) brightness(107%) contrast(96%);
+    filter: var(--to-green);
 }
 
 .contact-title {
@@ -658,7 +698,7 @@ footer {
 }
 .github-stats-img {
     width: 0.8rem;
-    filter: invert(91%) sepia(3%) saturate(588%) hue-rotate(1deg) brightness(112%) contrast(95%);
+    filter: var(--to-foreground2);
 }
 
 .github-stats-row {
@@ -674,7 +714,11 @@ footer {
 }
 
 .repo-hyperlink {
-    transition: all 0.5s;
+    transition: all 1s;
+}
+
+.repo-hyperlink:hover {
+    color: var(--green);
 }
 
 /* RESPONSIVE MEDIA QUERIES  */
