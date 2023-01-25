@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set initial theme to 'dark'
     document.documentElement.className = 'dark';
 
+    // Animate home elements on load
+    animateHome();
+
     // Slide navbar on scroll
     slideNavbarUp();
 
@@ -24,8 +27,14 @@ document.addEventListener('DOMContentLoaded', function() {
     getGithubStats();
 })
 
+// Animate home elements
+function animateHome() {
+    const hiddenElements = document.querySelectorAll('.hidden-home-bot,.hidden-home-top');
+    hiddenElements.forEach((el) => el.classList.add('shown-home'));
+};
+
 // Show elements on scroll
-function showElementsOnScroll () {
+function showElementsOnScroll() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -39,7 +48,13 @@ function showElementsOnScroll () {
 };
 
 // Remove navbar box-shadow if scrollTop === 0
-function removeNavbarShadow () {
+function removeNavbarShadow() {
+    if ($(this).scrollTop() === 0){
+        $('nav').css('box-shadow', 'none');
+    } else {
+        $('nav').css('box-shadow', '0 3px 8px 8px var(--dark-shadow)');
+    }
+
     $(window).scroll(function(event) {
         if ($(this).scrollTop() === 0){
             $('nav').css('box-shadow', 'none');
@@ -50,7 +65,7 @@ function removeNavbarShadow () {
 };
 
 // Pre-loader animation
-function preLoaderAnimation () {
+function preLoaderAnimation() {
     const preloaderTime = 2000;
     $(window).on('load', function(){
         $('body').css('overflow', 'hidden');
@@ -67,7 +82,7 @@ function removeLoader(){
 };
 
 // Slide navbar up if window scrolls-down
-function slideNavbarUp () {
+function slideNavbarUp() {
     var lastScrollTop = 0;
     $(window).scroll(function(event){
         var scrollTop = $(this).scrollTop();
@@ -85,7 +100,7 @@ function slideNavbarUp () {
 };
 
 // Toggle menu icon based on mobile menu visibility
-function toggleMenuIcon () {
+function toggleMenuIcon() {
     let closeURL = './static/assets/icons/mobile-menu/close-menu-icon.svg';
     let openURL ='./static/assets/icons/mobile-menu/menu-icon.svg';
 
@@ -128,7 +143,7 @@ function toggleThemeIcon() {
             });
         });
     };
-}
+};
 
 // Toggle Theme
 function toggleTheme() {
@@ -157,7 +172,7 @@ function slideOnResize() {
 };
 
 // Fetch github repository stats for footer
-function getGithubStats () {
+function getGithubStats() {
     const url = 'https://api.github.com/repos/nicolasbrandao/portfolio';
 
     fetch(url)

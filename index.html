@@ -35,26 +35,26 @@
         <nav class="navbar">
 
             <div class="nav-regular-menu-container">
-                <a class="nav-brand" href="https://nicolasbrandao.github.io/portfolio/">NB</a>
+                <a style="--order: 0;" class="nav-brand hidden-home-top" href="https://nicolasbrandao.github.io/portfolio/">NB</a>
                 <div class="nav-right-container">
-                    <div>
+                    <div style="--order: 1;" class="hidden-home-top">
                         <img class="mode-icon" id="mode-icon" src="./static/assets/icons/theme/dark-mode.svg" alt="Mode icon">
                     </div>
         
                     <div class="menu-icon-container" id="menu-icon-container">
                         <div class="mobile-menu-img-container">
-                            <img class="nav-menu-icon" id="nav-menu-icon" src="./static/assets/icons/mobile-menu/menu-icon.svg" alt="Mobile menu icon">
+                            <img style="--order: 2;" class="nav-menu-icon hidden-home-top" id="nav-menu-icon" src="./static/assets/icons/mobile-menu/menu-icon.svg" alt="Mobile menu icon">
                         </div>    
                     </div>
                     
                     <div class="nav-menu-container">
                         <ul>
-                            <li class="nav-item"><a class="nav-link" href="#sobre">Sobre mim</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
-                            <li class="nav-item"><a class="nav-link" href="https://drive.google.com/file/d/1VgeLcN-Zs4ta-lW-N0sJ3M1bpuYN-L-L/view?usp=share_link" target="_blank">Currículo</a></li>
+                            <li style="--order: 3;" class="nav-item hidden-home-top"><a class="nav-link" href="#sobre">Sobre mim</a></li>
+                            <li style="--order: 4;" class="nav-item hidden-home-top"><a class="nav-link" href="#home">Home</a></li>
+                            <li style="--order: 5;" class="nav-item hidden-home-top"><a class="nav-link" href="#skills">Skills</a></li>
+                            <li style="--order: 6;" class="nav-item hidden-home-top"><a class="nav-link" href="#projetos">Projetos</a></li>
+                            <li style="--order: 7;" class="nav-item hidden-home-top"><a class="nav-link" href="#contato">Contato</a></li>
+                            <li style="--order: 8;" class="nav-item hidden-home-top"><a class="nav-link" href="https://drive.google.com/file/d/1VgeLcN-Zs4ta-lW-N0sJ3M1bpuYN-L-L/view?usp=share_link" target="_blank">Currículo</a></li>
                         </ul>
                     </div>
                 </div>
@@ -78,10 +78,10 @@
     <main>
         <div id="home" class="main-block">
             <div class="main-container">
-                <p id="greeting" class="hidden">Olá, meu nome é</p>
-                <h1 id="full-name" class="hidden">Nícolas Brandão</h1>
-                <p id="intro" class="hidden">Sou um desenvolvedor front-end</p>
-                <p id="bio" class="hidden">Sou um <span class="high-text">profissional</span> que busca diariamente melhorar a habilidade em construir para a web. Meu objetivo atual é desenvolver minhas habilidades com <span class="high-text">React.js</span> e me tornar uma referência nessa tecnologia</p>
+                <p style="--order: 9;" id="greeting" class="hidden-home-bot">Olá, meu nome é</p>
+                <h1 style="--order: 10;" id="full-name" class="hidden-home-bot">Nícolas Brandão</h1>
+                <p style="--order: 11;" id="intro" class="hidden-home-bot">Sou um desenvolvedor front-end</p>
+                <p style="--order: 12;" id="bio" class="hidden-home-bot">Sou um <span class="high-text">profissional</span> que busca diariamente melhorar a habilidade em construir para a web. Meu objetivo atual é desenvolver minhas habilidades com <span class="high-text">React.js</span> e me tornar uma referência nessa tecnologia</p>
             </div>
         </div>
         
@@ -101,7 +101,11 @@
                         <br> 
                         <p class="hidden">Estou <span class="high-text">muito feliz</span> na caminhada de <span class="high-text">transição</span> para o mundo do <span class="high-text">desenvolvimento front-end</span>. Curtir o processo é essencial para alcançarmos nossos objetivos com plenitude</p>
                         <br>
-                        <a href="https://frill-word-deb.notion.site/05e98f1767054c43a2cea6118e331bcb?v=a47a1074574940c7a0a7091ccdd706de" class="button-link hidden" target="_blank">Acesse meu Notion<img src="./static/assets/icons/misc/external-link.svg" alt="Notion" class="notion-external"></a>
+                        <a href="https://frill-word-deb.notion.site/05e98f1767054c43a2cea6118e331bcb?v=a47a1074574940c7a0a7091ccdd706de" class="hidden" target="_blank">
+                            <div class="button-link">
+                                Acesse meu Notion<img src="./static/assets/icons/misc/external-link.svg" alt="Notion" class="notion-external">
+                            </div>
+                        </a>
                     </div>
                     <div class="about-img hidden">
                         <img class="profile-img" src="./static/assets/images/profile-square.png" alt="Nícolas Brandão">
@@ -244,28 +248,34 @@
                 <div class="contact-container hidden">
                     <div class="contact-backdrop">
                         <p class="contact-name"> <span class="high-text">Nícolas Brandão</span></p>
-                        <div class="contact-card">
-                            <img class="contact-icon" src="./static/assets/icons/misc/mail.svg" alt="Email">
-                            <p class="contact-title">nicolas.brandaor@gmail.com</p>
-                        </div>
+                        <a href="">
+                            <div class="contact-card">
+                                <img class="contact-icon" src="./static/assets/icons/misc/mail.svg" alt="Email">
+                                <p class="contact-title">nicolas.brandaor@gmail.com</p>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="contact-card">
+                                <img class="contact-icon" src="./static/assets/icons/social-media/linkedin.svg" alt="LinkedIn">
+                                <p class="contact-title">linkedin.com/in/nicolasbrandao/</p>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="contact-card">
+                                <img class="contact-icon" src="./static/assets/icons/social-media/github.svg" alt="Github">
+                                <p class="contact-title">github.com/nicolasbrandao</p>
+                            </div>
+                        </a>
                         <div class="contact-card">
                             <img class="contact-icon" src="./static/assets/icons/misc/whatsapp.svg" alt="Whatsapp">
                             <p class="contact-title">+55 37 9 9112 4140</p>
-                        </div>
-                        <div class="contact-card">
-                            <img class="contact-icon" src="./static/assets/icons/social-media/linkedin.svg" alt="LinkedIn">
-                            <p class="contact-title">linkedin.com/in/nicolasbrandao/</p>
-                        </div>
-                        <div class="contact-card">
-                            <img class="contact-icon" src="./static/assets/icons/social-media/github.svg" alt="Github">
-                            <p class="contact-title">github.com/nicolasbrandao</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="lateral-menu left">
+        <div style="--order: 13;" class="lateral-menu hidden-home-bot left">
             <ul>
                 <li>
                     <a href="https://www.linkedin.com/in/nicolasbrandao/" target="_blank" rel="author"><img class="lateral-menu-icon" src="./static/assets/icons/social-media/linkedin.svg" alt="Linkedin"></a>
@@ -279,7 +289,7 @@
             </ul>
             <div class="lateral-menu-br"></div>
         </div>
-        <div class="lateral-menu right">
+        <div style="--order: 14;" class="lateral-menu hidden-home-bot right">
             <a class="lateral-menu-email" target="_blank" href="mailto: nicolas.brandaor@gmail.com" rel="author">nicolas.brandaor@gmail.com</a>
             <div class="lateral-menu-br"></div>
         </div>

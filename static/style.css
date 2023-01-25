@@ -110,6 +110,28 @@ p {
     width: 100%;
 }
 
+/* HIDDEN FOR HOME LOAD ANIMATION */
+.hidden-home-bot {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translate(0, 100px);
+}
+
+.hidden-home-top {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translate(0, -100px);
+}
+
+.shown-home {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(0, 0);
+
+    transition-property: opacity, filter, transform;
+    transition: 1s;
+    transition-delay: calc(var(--order) * 150ms + (3100ms));
+}
 
 /* HIDE AND SHOW ELEMENTS ON SCROLL WITH INTERSECTION OBERSERVER */
 .hidden {
@@ -127,6 +149,7 @@ p {
 
 @media(prefers-reduced-motion: no-preference) {
     .hidden {
+        transition-property: opacity, filter, transform;
         transition: all 1s;
     }
 }
@@ -176,7 +199,6 @@ p {
     font-weight: bolder;
     font-size: 1.2rem;
     cursor: pointer;
-    transition: all 1s;
 }
 
 .nav-brand::before {
@@ -224,14 +246,12 @@ p {
 .nav-menu-container ul li {
     display: block;
     padding: 0.2rem 0.5rem;
-    transition: all 1s;
     white-space: nowrap;
 }
 
 .nav-menu-container ul li a {
     text-decoration: none;
     color: var(--foreground);
-    transition: all 1s;
 }
 .nav-menu-container ul li a:hover {
     color: var(--green);
@@ -260,11 +280,13 @@ p {
     cursor: pointer;
     margin-right: 1.5rem;
     filter: var(--to-foreground2);
-    transition: all 1s;
+
 }
 
 .nav-menu-icon:hover {
     filter: var(--to-green);
+    transition-property: filter;
+    transition: 1s;
 }
 
 .menu-icon-container {
@@ -389,7 +411,6 @@ p {
     align-items: center;
     justify-content: flex-end;
     overflow: hidden;
-    transition: all 1s;
 }
 
 .lateral-menu ul {
@@ -498,9 +519,9 @@ p {
 
 .button-link {
     display: flex;
+    gap: 0.5rem;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
     width:fit-content;
     padding: 1rem;
     margin-top: 3rem;
@@ -663,6 +684,7 @@ p {
 
 .contact-card:hover {
     transform: translate(0, -10px);
+    color: var(--green);
 }   
 
 .contact-name {
