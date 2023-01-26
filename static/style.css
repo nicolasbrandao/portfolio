@@ -12,10 +12,12 @@
     --to-green: invert(84%) sepia(8%) saturate(2819%) hue-rotate(75deg) brightness(91%) contrast(118%);
     --to-foreground: invert(90%) sepia(9%) saturate(513%) hue-rotate(342deg) brightness(118%) contrast(94%);
     --to-foreground2: invert(83%) sepia(0%) saturate(113%) hue-rotate(209deg) brightness(110%) contrast(79%);
-
+    
+    /* Font families */
     --code-font: "Cascadia Mono-SemiLight",Menlo,Monaco,Consolas,monospace;
     --body-font: "Segoe UI Web (West European)","Segoe UI",BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
 
+    /* Smooth Scroll*/
     scroll-behavior: smooth;
 }
 
@@ -33,7 +35,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* background-color: rgba(0, 0, 0, 0.1) !important; */
+    /* background-color: rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid red !important; */
 }
 
 ::-webkit-scrollbar {
@@ -127,12 +130,10 @@ p {
     opacity: 1;
     filter: blur(0);
     transform: translate(0, 0);
-
     transition-property: opacity, filter, transform;
-    transition: 1s;
+    transition-duration: 1s, 1s, 1s;
     transition-delay: calc(var(--order) * 150ms + (3100ms));
-}
-
+}  
 /* HIDE AND SHOW ELEMENTS ON SCROLL WITH INTERSECTION OBERSERVER */
 .hidden {
     opacity: 0;
@@ -150,7 +151,7 @@ p {
 @media(prefers-reduced-motion: no-preference) {
     .hidden {
         transition-property: opacity, filter, transform;
-        transition: all 1s;
+        transition-duration: 1s, 1s, 1s;
     }
 }
 
@@ -216,27 +217,21 @@ p {
 }
 
 .nav-menu-container {
-    margin-left: -0.5rem;
     display: flex;
     align-items: center;
     width: 27.5rem;
     overflow: hidden;
-    transition: all 1s;
+    transition-property: width, visibility, margin-left;
+    transition-duration: 1s, 1s, 1s;
+    
 }
 
 .nav-menu-container ul {
+    display: flex;
+    align-items: center;
     list-style: none;
     padding: 0;
     display: flex;
-}
-
-.nav-menu-container ul li:last-child{
-    border: 1px solid var(--green);
-    border-radius: 0.2rem;
-}
-
-.nav-menu-container ul li:last-child:hover{
-    background-color: rgba(80, 250, 123, 0.1)
 }
 
 .nav-menu-container ul li:last-child a{
@@ -252,10 +247,12 @@ p {
 .nav-menu-container ul li a {
     text-decoration: none;
     color: var(--foreground);
+    transition-property: color;
+    transition-duration: 1s;
 }
+
 .nav-menu-container ul li a:hover {
     color: var(--green);
-    transition: all 1s;
 }
 
 .nav-right-container {
@@ -266,8 +263,10 @@ p {
 
 .mode-icon {
     cursor: pointer;
+    margin-right: -1.5rem;
     filter: var(--to-foreground2);
-    transition: all 1s;
+    transition-property: filter;
+    transition-duration: 1s;
 }
 
 .mode-icon:hover {
@@ -280,13 +279,12 @@ p {
     cursor: pointer;
     margin-right: 1.5rem;
     filter: var(--to-foreground2);
-
+    transition-property: filter;
+    transition-duration: 1s;
 }
 
 .nav-menu-icon:hover {
     filter: var(--to-green);
-    transition-property: filter;
-    transition: 1s;
 }
 
 .menu-icon-container {
@@ -319,8 +317,9 @@ p {
 
 .nav-mobile-menu-container li {
     cursor: pointer;
-    transition: all 1s;
     overflow: hidden;
+    transition-property: background-color, color;
+    transition-duration: 1s, 1s;
 }
 
 .nav-mobile-menu-container li:hover {
@@ -332,8 +331,9 @@ p {
     text-decoration: none;
     color: var(--foreground);
     padding: 0.5rem;
-    transition: all 1s;
     display: block;
+    transition-property: color;
+    transition-duration: 1s;
 }
 
 .nav-mobile-menu-container li a:hover {
@@ -411,6 +411,8 @@ p {
     align-items: center;
     justify-content: flex-end;
     overflow: hidden;
+    transition-property: height, visibility;
+    transition-duration: 1s, 1s;
 }
 
 .lateral-menu ul {
@@ -423,6 +425,7 @@ p {
 }
 
 .left {
+    bottom: 0;
     margin-left: 1rem;
 } 
 
@@ -430,8 +433,9 @@ p {
     width: 2rem;
     margin-top: 0.2rem;
     filter: var(--to-foreground2);
-    transition: all 1s;
     cursor: pointer;
+    transition-property: transform, filter;
+    transition-duration: 1s, 1s;
 }
 
 .lateral-menu-icon:hover {
@@ -446,7 +450,8 @@ p {
     writing-mode: vertical-lr;
     margin-bottom: 0.5rem;
     cursor: pointer;
-    transition: all 1s;
+    transition-property: transform, color;
+    transition-duration: 1s, 1s;
 }
 
 .lateral-menu-email:hover {
@@ -523,17 +528,17 @@ p {
     align-items: center;
     justify-content: center;
     width:fit-content;
-    padding: 1rem;
-    margin-top: 3rem;
+    padding: 0.5rem;
     color: var(--green);
     border: 1px solid var(--green);
     border-radius: 0.2rem;
     cursor: pointer;
-    transition: all 1s;
+    transition-property: background-color;
+    transition-duration: 1s;
 }
 
 .button-link:hover {
-    background-color: rgba(80, 250, 123, 0.1)
+    background-color: rgba(80, 250, 123, 0.1);
 }
 
 .notion-external {
@@ -545,12 +550,6 @@ p {
     position: relative;
     width: 15rem;
     border-radius: 0.2rem;
-    transition: all 1s;
-}
-
-.profile-img:hover {
-    box-shadow:  10px 10px 28px #46dc6c,
-                -10px -10px 28px #5aff8a;
 }
 
 /* SKILLS */
@@ -567,7 +566,8 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: all 1s;
+    transition-property: transform;
+    transition-duration: 1s;
 }
 
 .technology-card:hover {
@@ -602,6 +602,7 @@ p {
     flex-direction: column;
     gap: 1rem;
 }
+
 .project-card {
     display: flex;
     flex-direction: column;
@@ -615,7 +616,8 @@ p {
     border-radius: 0.2rem;
     box-shadow: 5px 5px 5px var(--dark-shadow);
     background-color: var(--background2);
-    transition: all 1s;
+    transition-property: transform;
+    transition-duration: 1s;
 }
 
 .project-card:hover {
@@ -679,7 +681,8 @@ p {
     display: flex;
     align-items: center;
     gap: 1rem;
-    transition: all 1s;
+    transition-property: transform, color;
+    transition-duration: 1s, 1s;
 }
 
 .contact-card:hover {
@@ -696,7 +699,8 @@ p {
 .contact-icon {
     width: 1.8rem;
     filter: var(--to-foreground);
-    transition: all 1s;
+    transition-property: filter;
+    transition-duration: 1s;
 }
 
 .contact-icon:hover {
@@ -733,10 +737,8 @@ footer {
 .github-stats-container {
     display: flex;
     gap: 0.2rem;
-}
-
-.repo-hyperlink {
-    transition: all 1s;
+    transition-property: color;
+    transition-duration: 1s;
 }
 
 .repo-hyperlink:hover {
@@ -755,6 +757,11 @@ footer {
         width: 0rem;
         visibility: hidden;
         margin-left: -3rem;
+
+    }
+
+    .mode-icon {
+        margin: auto;
     }
 
     .menu-icon-container {
