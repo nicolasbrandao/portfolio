@@ -29,6 +29,11 @@
     --foreground2: #301E67;
     --cyan: #5B8FB9;
     --green: #50fa7b;
+
+    /* filters */
+    --to-green: invert(84%) sepia(8%) saturate(2819%) hue-rotate(75deg) brightness(91%) contrast(118%);
+    --to-foreground: invert(6%) sepia(18%) saturate(7492%) hue-rotate(241deg) brightness(85%) contrast(114%);
+    --to-foreground2: invert(13%) sepia(31%) saturate(4074%) hue-rotate(239deg) brightness(96%) contrast(101%)
 }
 
 *, *:before, *:after {
@@ -198,7 +203,7 @@ p {
 
 .nav-brand {
     font-weight: bolder;
-    font-size: 1.2rem;
+    font-size: 2rem;
     cursor: pointer;
 }
 
@@ -206,14 +211,14 @@ p {
     content: '<';
     color: var(--green);
     font-family: var(--code-font);
-    font-size: 1.5rem;
+    font-size: 2.5rem;
 }
 
 .nav-brand::after {
     content: '/>';
     color: var(--green);
     font-family: var(--code-font);
-    font-size: 1.5rem;
+    font-size: 2.5rem;
 }
 
 .nav-menu-container {
@@ -412,7 +417,7 @@ p {
     justify-content: flex-end;
     overflow: hidden;
     transition-property: height, visibility;
-    transition-duration: 1s, 1s;
+    transition-duration: 0.5s, 0.5s;
 }
 
 .lateral-menu ul {
@@ -420,14 +425,18 @@ p {
 }
 
 .right {
-    bottom: 0;
     right: 1.5rem;
 }
 
 .left {
-    bottom: 0;
     margin-left: 1rem;
-} 
+}
+
+.lateral-menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .lateral-menu-icon {
     width: 2rem;
@@ -549,7 +558,10 @@ p {
 .profile-img {
     position: relative;
     width: 15rem;
-    border-radius: 0.2rem;
+    border-radius: 50%;
+    -webkit-box-shadow: inset -74px -77px 34px 14px rgba(80,250,123,1);
+    -moz-box-shadow: inset -74px -77px 34px 14px rgba(80,250,123,1);
+    box-shadow: inset -74px -77px 34px 14px rgba(80,250,123,1);
 }
 
 /* SKILLS */
@@ -657,14 +669,16 @@ p {
     gap: 1rem;
     align-self: center;
     margin-top: 20%;
-    border-radius: 0.2rem;
+    border-radius: 0.5rem;
     background-color: var(--background2);
     padding: 1rem;
     width: 100%;
+    aspect-ratio: 1.586;
+    max-width: 30rem;
     background-image: url('./assets/icons/favicon/android-chrome-512x512.png');
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center right 2rem;
+    background-size: 200px 200px;
+    background-position: bottom right 2rem;
     box-shadow: 5px 5px 5px var(--dark-shadow);
 }
 
@@ -677,10 +691,15 @@ p {
     backdrop-filter: blur(3px);
 }
 
+.contact-backdrop a {
+    width: fit-content;
+}
+
 .contact-card {
     display: flex;
     align-items: center;
     gap: 1rem;
+    width: fit-content;
     transition-property: transform, color;
     transition-duration: 1s, 1s;
 }
@@ -694,6 +713,7 @@ p {
     margin-bottom: 1rem;
     font-family: var(--code-font);
     font-weight: bolder;
+    font-size: 2rem;
 }
 
 .contact-icon {
@@ -708,7 +728,7 @@ p {
 }
 
 .contact-title {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
 }
 
 /* FOOTER */
@@ -830,5 +850,9 @@ footer {
     .project-card {
         position: static;
         width: 100%;
+    }
+
+    .contact-title {
+        font-size: 1rem;
     }
 }

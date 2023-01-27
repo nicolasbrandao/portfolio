@@ -66,7 +66,7 @@ function removeNavbarShadow() {
 
 // Pre-loader animation
 function preLoaderAnimation() {
-    const preloaderTime = 2000;
+    const preloaderTime = 1500;
     $(window).on('load', function(){
         $('body').css('overflow', 'hidden');
         setTimeout(removeLoader, preloaderTime);
