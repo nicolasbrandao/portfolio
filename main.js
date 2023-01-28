@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Pre-loader animation
     preLoaderAnimation();
 
-    // Remove navbar shadow if scrollTop === 0
+    // Remove navbar shadow if scrolled to top of page
     removeNavbarShadow();
 
     // Animate on scroll
@@ -47,7 +47,7 @@ function showElementsOnScroll() {
     hiddenElements.forEach((el) => observer.observe(el));
 };
 
-// Remove navbar box-shadow if scrollTop === 0
+// Remove navbar box-shadow if scrolled to top of page
 function removeNavbarShadow() {
     if ($(this).scrollTop() === 0){
         $('nav').css('box-shadow', 'none');
@@ -68,9 +68,8 @@ function removeNavbarShadow() {
 function preLoaderAnimation() {
     const preloaderTime = 1500;
     $(window).on('load', function(){
-        $('body').css('overflow', 'hidden');
         setTimeout(removeLoader, preloaderTime);
-        setTimeout(() => $('body').css('overflow', 'overlay'), preloaderTime);
+        setTimeout(() => $('body').css('overflow', 'overlay'), preloaderTime + 4000);
     });
 };
 

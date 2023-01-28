@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 :root,
     :root.dark {
     --background1: #161616;
@@ -5,7 +7,7 @@
     --dark-shadow: #101010;
     --foreground: #f8f8f2;
     --foreground2: lightgray;
-    --cyan: #8be9fd;
+    --blue: #8be9fd;
     --green: #50fa7b;
 
     /* filters */
@@ -14,8 +16,8 @@
     --to-foreground2: invert(83%) sepia(0%) saturate(113%) hue-rotate(209deg) brightness(110%) contrast(79%);
     
     /* Font families */
-    --code-font: "Cascadia Mono-SemiLight",Menlo,Monaco,Consolas,monospace;
-    --body-font: "Segoe UI Web (West European)","Segoe UI",BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+    --code-font: monospace;
+    --body-font: Roboto,sans-serif;
 
     /* Smooth Scroll*/
     scroll-behavior: smooth;
@@ -27,13 +29,13 @@
     --dark-shadow: #f2f2f2;
     --foreground: #03001C;
     --foreground2: #301E67;
-    --cyan: #5B8FB9;
-    --green: #50fa7b;
+    --blue: #5B8FB9;
+    --green: #06c636;
 
     /* filters */
-    --to-green: invert(84%) sepia(8%) saturate(2819%) hue-rotate(75deg) brightness(91%) contrast(118%);
+    --to-green: invert(60%) sepia(62%) saturate(3730%) hue-rotate(94deg) brightness(99%) contrast(95%);
     --to-foreground: invert(6%) sepia(18%) saturate(7492%) hue-rotate(241deg) brightness(85%) contrast(114%);
-    --to-foreground2: invert(13%) sepia(31%) saturate(4074%) hue-rotate(239deg) brightness(96%) contrast(101%)
+    --to-foreground2: invert(13%) sepia(31%) saturate(4074%) hue-rotate(239deg) brightness(96%) contrast(101%);
 }
 
 *, *:before, *:after {
@@ -60,6 +62,7 @@ body {
     font-family: var(--body-font);
     background-color: var(--background1);
     color: var(--foreground);
+    overflow: overlay;
 }
 
 nav {
@@ -82,6 +85,7 @@ main {
 }
 
 a:link, a:visited, a:hover, a:active {
+    color: inherit;
     text-decoration: none;
 }
 
@@ -97,8 +101,16 @@ p {
     text-align: justify;
 }
 
+.listed-element::before {
+    content: "▹";
+    position: relative;
+    top: 0.2rem;
+    font-size: 2rem;
+    color: var(--green);
+}
+
 .high-text {
-    color: var(--cyan);
+    color: var(--blue);
     display: inline-block;
     position: relative;
 }
@@ -110,7 +122,7 @@ p {
     bottom: 0;
     width: 0;
     height: 0.05rem;
-    background-color: var(--cyan);
+    background-color: var(--blue);
     transition: width 0.25s ease-out;
 }
 
@@ -139,7 +151,8 @@ p {
     transition-duration: 1s, 1s, 1s;
     transition-delay: calc(var(--order) * 150ms + (3100ms));
 }  
-/* HIDE AND SHOW ELEMENTS ON SCROLL WITH INTERSECTION OBERSERVER */
+
+/* HIDE AND SHOW ELEMENTS ON SCROLL WITH INTERSECTION OBSERVER */
 .hidden {
     opacity: 0;
     filter: blur(5px);
@@ -154,6 +167,10 @@ p {
 }
 
 @media(prefers-reduced-motion: no-preference) {
+    body {
+        overflow: hidden;
+    }
+
     .hidden {
         transition-property: opacity, filter, transform;
         transition-duration: 1s, 1s, 1s;
@@ -224,11 +241,10 @@ p {
 .nav-menu-container {
     display: flex;
     align-items: center;
-    width: 27.5rem;
+    width: 28.7rem;
     overflow: hidden;
     transition-property: width, visibility, margin-left;
     transition-duration: 1s, 1s, 1s;
-    
 }
 
 .nav-menu-container ul {
@@ -369,9 +385,9 @@ p {
 }
 
 .section-title {
-    color: var(--cyan);
+    color: var(--blue);
     font-size: 1.5rem;
-    font-weight: 400;
+    font-weight: 600;
     font-family: var(--code-font);
 }
 
@@ -404,6 +420,10 @@ p {
     gap: 1rem;
     margin-top: 5rem;
     height: calc(100% - 5rem);
+}
+
+.main-container:first-child {
+    margin-top: 0rem;
 }
 
 /* LATERAL MENU */
@@ -482,7 +502,7 @@ p {
 }
 
 #greeting {
-    color: var(--cyan);
+    color: var(--blue);
     font-family: var(--code-font);
     font-size: 1.5rem;
 }
@@ -671,24 +691,18 @@ p {
     margin-top: 20%;
     border-radius: 0.5rem;
     background-color: var(--background2);
+    justify-content: space-between;
     padding: 1rem;
     width: 100%;
     aspect-ratio: 1.586;
     max-width: 30rem;
-    background-image: url('./assets/icons/favicon/android-chrome-512x512.png');
-    background-repeat: no-repeat;
-    background-size: 200px 200px;
-    background-position: bottom right 2rem;
     box-shadow: 5px 5px 5px var(--dark-shadow);
 }
 
 .contact-backdrop {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    height: 100%;
-    width: 100%;
-    backdrop-filter: blur(3px);
+    gap: 1rem;
 }
 
 .contact-backdrop a {
@@ -826,6 +840,10 @@ footer {
 
     .about-container {
         flex-direction: column;
+    }
+
+    .profile-img {
+        margin-top: 1.5rem;
     }
 
     .technology-card {
