@@ -87,6 +87,7 @@ main {
 a:link, a:visited, a:hover, a:active {
     color: inherit;
     text-decoration: none;
+    width: fit-content;
 }
 
 a:link {
@@ -95,10 +96,6 @@ a:link {
 
 a:visited {
     color: inherit;
-}
-
-p {
-    text-align: justify;
 }
 
 .listed-element::before {
@@ -130,7 +127,7 @@ p {
     width: 100%;
 }
 
-/* HIDDEN FOR HOME LOAD ANIMATION */
+/* HOME LOAD ANIMATION */
 .hidden-home-bot {
     opacity: 0;
     filter: blur(5px);
@@ -570,7 +567,7 @@ p {
     background-color: rgba(80, 250, 123, 0.1);
 }
 
-.notion-external {
+.link-img-external {
     filter: var(--to-green);
     width: 1.5rem;
 }
