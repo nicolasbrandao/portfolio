@@ -5,10 +5,10 @@
 </p>
 
 <p align="center">
-  <a href="##-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="##-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="##-contribuição">Contribuição</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="##-licença">Licença</a>
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-contribuição">Contribuição</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-licença">Licença</a>
 </p>
 
 <p align="center">
@@ -21,19 +21,22 @@
   <img alt="Imagem do projeto Habits" src="./static/assets/images/portfolio-home.png" width="100%" />
 </p>
 
+
 ## 👨‍💻 Projeto
 
 Este é um projeto de página pessoal de portfolio construído principalmente com JavaScript Vanilla, HTML e CSS. A única biblioteca third-party usada foi jQuery para algumas das animações.
 
 [Deploy 🔗](https://nicolasbrandao.github.io/portfolio/)
 
-## 🛠️ Tecnologias
+
+## 🛠 Tecnologias
 
 Estas foram as tecnologias usadas no desenvolvimento deste projeto:
 
 - JavaScript & [jQuery](https://jquery.com/)
 - HTML
 - CSS
+
 
 ## 👥 Contribuição
 
