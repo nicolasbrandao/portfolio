@@ -770,6 +770,11 @@ footer {
     transition-duration: 1s;
 }
 
+.repo-hyperlink{
+    transition-property: color;
+    transition-duration: 1s;
+}
+
 .repo-hyperlink:hover {
     color: var(--green);
 }
