@@ -24,7 +24,7 @@
 
 ## 👨‍💻 Projeto
 
-Este é um projeto de página pessoal de portfolio construído principalmente com JavaScript Vanilla, HTML e CSS. A única biblioteca third-party usada foi jQuery para algumas das animações.
+Este é um projeto de página pessoal de portfolio construído principalmente com JavaScript Vanilla, HTML e CSS. A única biblioteca third-party usada foi jQuery para algumas das animações. Também não foi usado nenhum tipo de CMS, todo o código e estrutura do projeto foram construídos do zero.
 
 [Deploy 🔗](https://nicolasbrandao.github.io/portfolio/)
 
