@@ -657,6 +657,11 @@ a:visited {
     align-items: flex-end;
 }
 
+.project-links {
+    display: flex;
+    gap: 0.5rem;
+}
+
 .project-folder {
     width: 2rem;
     filter: var(--to-foreground2);
