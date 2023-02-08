@@ -18,7 +18,7 @@
 <br>
 
 <p align="center">
-  <img alt="Imagem do projeto Habits" src="./static/assets/images/portfolio-home.png" width="100%" />
+  <img alt="Imagem do projeto Habits" src="./static/assets/images/projects/portfolio-home.png" width="100%" />
 </p>
 
 
